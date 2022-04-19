@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	    <meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+		<meta name="format-detection" content="telephone=no, address=no, email=no">
+
+		<meta name="title" content="KZ CYBER PURCHASE">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta property="og:type" content="website">
+	    <meta property="og:url"	content=""/>
+
+		<meta property="og:title" content="KZ CYBER PURCHASE">
+		<meta property="og:description" content="">
+		<meta property="og:image" content="">
+
+
+    <title>고려아연 사이버구매 시스템</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/font.css" />
+    <!-- <link rel="stylesheet" href="../assets/css/animation.css" /> -->
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/stylePurchaseInformation.css" />
+
+    <link rel="stylesheet" type="text/css" href="../assets/plugin/jquery.fullpage.css" />
+    <script type="text/javascript" src="../assets/js/jquery-3.6.0.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- 해당 cdn은 테스트를 위해서 사용했습니다. 실제 개발 시에는 cdn삭제 부탁드립니다. -->
+
+    <script type="text/javascript" src="../assets/plugin/jquery.fullpage.js"></script>
+    <script type="text/javascript" src="../assets/plugin/jquery.easings.min.js"></script>
+
+    <script type="text/javascript" src="../assets/js/ui.js"></script>
+
+  </head>
+  <body>
+    <header class="header">
+        <div class="inner">
+        <h1 class="logo">
+          <a href="main.html">KZ CYBER PURCHASE</a>
+        </h1>
+        <nav class="gnbHeader">
+          <h2 class="hide">대메뉴</h2>
+          <ul class="gnb">
+            <li><a href="/html/purchaseInformationSearch.html" class="gnbSelected">공개구매정보</a></li>
+            <li><a href="/html/" class="gnbunSelected">구매공고결과</a></li>
+            <li><a href="/html/" class="gnbunSelected">나의구매정보</a></li>
+            <li><a href="/html/" class="gnbunSelected">공지사항</a></li>
+            <li><a href="/html/" class="gnbunSelected">고객지원</a></li>
+          </ul>
+          <div class="containerGnbButtons">
+            <div class="buttonLogin"><button><a>로그인</a></button></div>
+          <div class="buttonJoin"><button><a>회원가입</a></button></div>
+          </div>
+        </nav>
+        </div>
+    </header>
+    <div class="containerFloating">
+      <div class="loginBottomFloating">
+        <p class="loginInformation"><span class="loginUser">주식회사 남광토건</span>님 로그인 중 입니다</p>
+        <p class="dataLabel">견적요망<span class="dataCount">2건</span></p>
+        <p class="dataLabel">신규공고<span class="dataCount">15건</span></p>
+        <button class="floatingButtonLogout" type="submit">로그아웃</button>
+      </div>
+    </div>
+    <div class="containerContents">
+        <h3 class="pageTitle">공개구매정보</h3>
+        <div class="pageTab">
+            <ul>
+                <li class="tabSelected"><a href="#">구매공고 검색</a></li>
+                <li class="tabUnselected"><a href="/html/">구매공고 결과검색</a></li>
+                <li class="tabUnselected"><a href="/html/">구매공고 상태확인</a></li>
+            </ul>
+        </div>
+        <div class="containerSearchArea">
+          <div class="inputDesign inputSelectbox">
+            <label for="company">입찰업체</label>
+            <input type="text" name="company" />
+          </div>
+          <div class="inputDesign inputBox">
+            <form>
+              <label for="number">구매공고번호</label>
+              <input type="text" name="number" id="number" />
+            </form>
+          </div>
+          <div class="inputDesign inputBox">
+            <label for="name">구매공고명</label>
+            <input type="text" name="name" id="name" />
+          </div>
+          <div class="inputDesign inputPopup">
+            <label for="category">대분류</label>
+            <input type="text" name="category" id="category" />
+          </div>
+          <div class="inputDesign inputSelectbox">
+            <label for="status">공고상태</label>
+            <input type="text" name="status" id="status" />
+          </div>
+          <div class="inputDesign inputDateTerm">
+            <label for="period01">공고기간</label>
+            <input type="text" name="period01" id="period01" />
+          </div>
+          <div class="inputDesign inputDateTerm">
+            <label for="period02">공고기간</label>
+            <input type="text" name="period02" id="period02" />
+          </div>
+          <button type="submit" class="searchAreaButton">검색</button>
+        </div>
+        <div class="containerTable">
+          <div class="form_control">
+            <div class="custom_select_wrap">
+              <div class="custom_select_box" tabindex="0">
+                <span class="custom_select_text">10개씩 보기</span>
+              </div>
+              <ul class="custom_select_list" style="display: none;">
+                <li value="select_option1" class="custom_select_option">10개씩 보기</li>
+                <li value="select_option2" class="custom_select_option">20개씩 보기</li>
+                <li value="select_option3" class="custom_select_option">30개씩 보기</li>
+              </ul>
+              <select class="select_origin">
+                  <option value="select_option1">10개씩 보기</option>
+                  <option value="select_option2">20개씩 보기</option>
+                  <option value="select_option3">30개씩 보기</option>
+              </select>
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>공고번호</th>
+                <th class="tableThName">공고명</th>
+                <th>대분류</th>
+                <th>공고시작일</th>
+                <th>공고마감일</th>
+                <th>담당자</th>
+                <th>공고구분</th>
+                <th>공고상태</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>2132</th>
+                <th class="tableThName">고려아연 온산 전기운영업체 입찰</th>
+                <th>대분류값</th>
+                <th>2022.04.12</th>
+                <th>2022.04.30</th>
+                <th>이정규</th>
+                <th>구분값</th>
+                <th><div class="statusTable statusIng">입찰중</div></th>
+              </tr>
+              <tr>
+                <th>2132</th>
+                <th class="tableThName">고려아연 온산 전기운영업체 입찰</th>
+                <th>대분류값</th>
+                <th>2022.04.12</th>
+                <th>2022.04.30</th>
+                <th>이정규</th>
+                <th>구분값</th>
+                <th><div class="statusTable statusWaiting">대기중</div></th>
+              </tr>
+              <tr>
+                <th>2132</th>
+                <th class="tableThName">고려아연 온산 전기운영업체 입찰</th>
+                <th>대분류값</th>
+                <th>2022.04.12</th>
+                <th>2022.04.30</th>
+                <th>이정규</th>
+                <th>구분값</th>
+                <th><div class="statusTable statusIng">입찰중</div></th>
+              </tr>
+              <tr>
+                <th>2132</th>
+                <th class="tableThName">고려아연 온산 전기운영업체 입찰</th>
+                <th>대분류값</th>
+                <th>2022.04.12</th>
+                <th>2022.04.30</th>
+                <th>이정규</th>
+                <th>구분값</th>
+                <th><div class="statusTable statusCompleted">입찰완료</div></th>
+              </tr>
+              <tr>
+                <th>2132</th>
+                <th class="tableThName">고려아연 온산 전기운영업체 입찰</th>
+                <th>대분류값</th>
+                <th>2022.04.12</th>
+                <th>2022.04.30</th>
+                <th>이정규</th>
+                <th>구분값</th>
+                <th><div class="statusTable statusIng">입찰중</div></th>
+              </tr>
+              <tr>
+                <th>2132</th>
+                <th class="tableThName">고려아연 온산 전기운영업체 입찰</th>
+                <th>대분류값</th>
+                <th>2022.04.12</th>
+                <th>2022.04.30</th>
+                <th>이정규</th>
+                <th>구분값</th>
+                <th><div class="statusTable statusIng">입찰중</div></th>
+              </tr>
+              <tr>
+                <th>2132</th>
+                <th class="tableThName">고려아연 온산 전기운영업체 입찰</th>
+                <th>대분류값</th>
+                <th>2022.04.12</th>
+                <th>2022.04.30</th>
+                <th>이정규</th>
+                <th>구분값</th>
+                <th><div class="statusTable statusWaiting">대기중</div></th>
+              </tr>
+              <tr>
+                <th>2132</th>
+                <th class="tableThName">고려아연 온산 전기운영업체 입찰</th>
+                <th>대분류값</th>
+                <th>2022.04.12</th>
+                <th>2022.04.30</th>
+                <th>이정규</th>
+                <th>구분값</th>
+                <th><div class="statusTable statusWaiting">대기중</div></th>
+              </tr>
+              <tr>
+                <th>2132</th>
+                <th class="tableThName">고려아연 온산 전기운영업체 입찰</th>
+                <th>대분류값</th>
+                <th>2022.04.12</th>
+                <th>2022.04.30</th>
+                <th>이정규</th>
+                <th>구분값</th>
+                <th><div class="statusTable statusIng">입찰중</div></th>
+              </tr>
+              <tr>
+                <th>2132</th>
+                <th class="tableThName">고려아연 온산 전기운영업체 입찰</th>
+                <th>대분류값</th>
+                <th>2022.04.12</th>
+                <th>2022.04.30</th>
+                <th>이정규</th>
+                <th>구분값</th>
+                <th><div class="statusTable statusIng">입찰중</div></th>
+              </tr>
+            </tbody>
+          </table>
+          <div class="tablePagination">
+            <a class="paginationArrow" href=""><img src="../img/arrow_10step.png" alt="맨 앞으로 가기"></a>
+            <a class="paginationArrow" href=""><img src="../img/arrow_1step.png" alt="하나 앞으로 가기"></a>
+            <a class="paginationSelected" href="">1</a>
+            <a href="">2</a>
+            <a href="">3</a>
+            <a href="">4</a>
+            <a class="paginationArrow" href=""><img class="arrowReverse" src="../img/arrow_1step.png" alt="하나 뒤로 가기"></a>
+            <a class="paginationArrow" href=""><img class="arrowReverse" src="../img/arrow_10step.png" alt="맨 뒤로 가기"></a>
+          </div>
+        </div>
+    </div>
+    <footer class="footer">
+      <div class="boxBranch">
+        <p class="branchTitle">본사</p>
+        <p class="branchAddress">주소 : 서울특별시 강남구 강남대로 542 영풍빌딩</p>
+        <p class="branchTel">연락처 : 02-519-3416</p>
+        <p class="branchFax">팩스 : 02-519-9987</p>
+      </div>
+      <div class="boxBranch">
+        <p class="branchTitle">온산</p>
+        <p class="branchAddress">주소 : 서울특별시 강남구 강남대로 542 영풍빌딩</p>
+        <p class="branchTel">연락처 : 02-519-3416</p>
+        <p class="branchFax">팩스 : 02-519-9987</p>
+      </div>
+      <p class="branchCopyright">COPYRIGHT 2022 KOREAZINC. ALL RIGHTS RESERVED.</p>
+    </footer>
+    <script>
+      // selectbox dropdown
+      let selectCustomFlag;
+          $('.custom_select_box').on('click', function() {
+            $(this).toggleClass('selected');
+            if($(this).hasClass('selected')) {
+              $('.custom_select_list').show();
+            } else {
+              $('.custom_select_list').hide();
+            }
+          })
+
+          $('.custom_select_box').on('focusin', function() {
+            $('.custom_select_list').show();
+          });
+
+          $('.custom_select_box').on('focusout', function() {
+            if(!selectCustomFlag) {
+              $('.custom_select_list').hide();
+            }
+            $(this).removeClass('selected');
+          });
+
+          $('.custom_select_option').on('mouseenter', function() {
+            selectCustomFlag = true;
+          
+          });
+
+          $('.custom_select_option').on('mouseout', function() {
+            selectCustomFlag = false;
+          });
+
+          $('.custom_select_option').on('click', function() {
+            let value = $(this).attr('value');
+            $(".custom_select_option").removeClass("selected");
+            $(this).addClass("selected");
+            $('.custom_select_text').text($(this).text());
+            $('.select_origin').val(value);
+            $('.custom_select_list').hide();
+
+            $('.select_origin').find('option').each(function(index, el) {
+              if($(el).attr('value') == value) {
+                $(el).attr('selected', 'selected');
+              } else {
+                $(el).removeAttr('selected');
+              }
+            });
+          }); 
+    </script>
+  </body>
