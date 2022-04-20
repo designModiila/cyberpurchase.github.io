@@ -186,11 +186,11 @@
     border-radius: 4px;
     text-align: center;
 }
-.containerGnbButtons .buttonLogin{
+.containerGnbButtons .buttonLogin {
     background-color: #F1F1F1;
     border-radius: 4px;
 }
-.containerGnbButtons .buttonLogin a {
+.containerGnbButtons .buttonLogin a button {
     color: #666;
 }
 .containerGnbButtons .buttonJoin {
@@ -198,7 +198,7 @@
     background-color: #6384B7;
     border-radius: 4px;
 }
-.containerGnbButtons .buttonJoin a {
+.containerGnbButtons .buttonJoin a button {
     color: #fff;
 }
 .containerGnbButtons .buttonLogin:hover, .containerGnbButtons .buttonLogin:active {
