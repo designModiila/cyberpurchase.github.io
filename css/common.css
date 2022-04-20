@@ -586,6 +586,10 @@ tbody tr th {
     color: #c1c1c1;
     text-align: center;
 }
+.containerBranch {
+    width: 752px;
+    margin: 0 auto;
+}
 .footer .boxBranch {
     display: inline-block;
     text-align: left;
