@@ -11,14 +11,14 @@
     <meta name="format-detection" content="telephone=no, address=no, email=no">
 
     <meta name="title" content="KZ CYBER PURCHASE">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="고려아연에서 운영하는 구매입찰견적서비스입니다.">
+    <meta name="keywords" content="고려아연, 입찰, 구매, 견적, 서비스">
     <meta property="og:type" content="website">
     <meta property="og:url"	content=""/>
 
     <meta property="og:title" content="KZ CYBER PURCHASE">
-    <meta property="og:description" content="">
-    <meta property="og:image" content="">
+    <meta property="og:description" content="고려아연에서 운영하는 구매입찰견적서비스입니다.">
+    <meta property="og:image" content="../img/main_logo_color.png">
 
 
     <title>고려아연 사이버구매 시스템</title>
@@ -28,16 +28,32 @@
     <link rel="stylesheet" href="../css/common.css" />
     <link rel="stylesheet" href="../css/styleJoin.css" />
 
-    <link rel="stylesheet" type="text/css" href="../assets/plugin/jquery.fullpage.css" />
-    <script type="text/javascript" src="../assets/js/jquery-3.6.0.min.js"></script>
-
-    <script type="text/javascript" src="../assets/plugin/jquery.fullpage.js"></script>
-    <script type="text/javascript" src="../assets/plugin/jquery.easings.min.js"></script>
-
     <script type="text/javascript" src="../assets/js/ui.js"></script>
 
   </head>
   <body>
+    <!-- <div class="containerPopup popupSameId">
+        <div class="boxContents">
+            <img src="../img/img_popup_alert.png" alt="안내 이미지">
+          <p class="popupText">동일한 ID가 존재합니다.<br>다른 ID를 사용해주세요.</p>
+          <button class="popupOneButton">확인</button>
+        </div>
+    </div> -->
+    <div class="containerPopup popupJoinCancel">
+        <div class="boxContents">
+            <img src="../img/img_popup_alert.png" alt="안내 이미지">
+            <p class="popupText">회원가입을 취소하시겠습니까?</p>
+            <button class="popupButtonCancel">취소</button>
+            <button class="popupButtonConfirm">확인</button>
+        </div>
+    </div>
+    <div class="containerPopup popupJoinComplete">
+        <div class="boxContents">
+            <img src="../img/img_popup_confirm.png" alt="안내 이미지">
+            <p class="popupText">가입 신청이 완료되었습니다.<br>관리자 승인 후 안내메일이 발송됩니다.</p>
+            <button class="popupOneButton">확인</button>
+        </div>
+    </div>
     <header class="header">
         <div class="inner">
         <h1 class="logo">
@@ -46,20 +62,27 @@
         <nav class="gnbHeader">
           <h2 class="hide">대메뉴</h2>
           <ul class="gnb">
-            <li><a href="/html/" class="gnbunSelected">공개구매정보</a></li>
-            <li><a href="/html/" class="gnbunSelected">구매공고결과</a></li>
-            <li><a href="/html/" class="gnbunSelected">나의구매정보</a></li>
-            <li><a href="/html/" class="gnbunSelected">공지사항</a></li>
-            <li><a href="/html/" class="gnbunSelected">고객지원</a></li>
+            <li><a href="#" class="gnbunSelected">공개구매정보</a></li>
+            <li><a href="#" class="gnbunSelected">구매공고결과</a></li>
+            <li><a href="#" class="gnbunSelected">나의구매정보</a></li>
+            <li><a href="#" class="gnbunSelected">공지사항</a></li>
+            <li><a href="#" class="gnbunSelected">고객지원</a></li>
           </ul>
           <div class="containerGnbButtons">
-            <div class="buttonLogin"><button><a>로그인</a></button></div>
-          <div class="buttonJoin"><button><a>회원가입</a></button></div>
+            <div class="buttonLogin"><button><a href="#">로그인</a></button></div>
+          <div class="buttonJoin"><button><a href="../html/joinAgreement.html">회원가입</a></button></div>
           </div>
         </nav>
-        <!-- <div class="clear"></div> -->
         </div>
     </header>
+    <div class="containerFloating">
+        <div class="loginBottomFloating">
+          <p class="loginInformation"><span class="loginUser">주식회사 남광토건</span>님 로그인 중 입니다</p>
+          <p class="dataLabel">견적요망<span class="dataCount">2건</span></p>
+          <p class="dataLabel">신규공고<span class="dataCount">15건</span></p>
+          <button class="floatingButtonLogout" type="submit">로그아웃</button>
+        </div>
+      </div>
     <div class="containerContents">
         <h3 class="pageTitle">회원가입</h3>
         <div class="containerProcess">
@@ -102,9 +125,9 @@
                     </div>
                     <div class="inputDesign">
                         <input type="text" required>
-                        <p class="passwordMatch">비밀번호가 일치합니다.</p>
-                        <p class="passwordUnmatch">비밀번호가 일차히지 않습니다.</p>
                     </div>
+                    <p class="passwordMatch">비밀번호가 일치합니다.</p>
+                    <p class="passwordUnmatch">비밀번호가 일차히지 않습니다.</p>
                 </div>
             </div>
             <div class="formGroup">
@@ -157,6 +180,348 @@
                 </div>
             </div>
         </div>
+        <p class="pageSubTitle">가입정보 입력 (선택)</p>
+        <span class="pageDescription">다음 중 기업에 해당하는 항목만 기입해주세요.</span>
+        <div class="formField">
+            <div class="formGroup">
+                <div class="formBox">
+                    <div class="formLabel">
+                        설립일자
+                    </div>
+                    <div class="inputDesign inputDesignB">
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                    </div>
+                </div>
+                <div class="formBox">
+                    <div class="formLabel">
+                        상표
+                    </div>
+                    <div class="inputDesign">
+                        <input type="text" />
+                    </div>
+                </div>
+            </div>
+            <div class="formGroup">
+                <div class="formBox">
+                    <div class="formLabel">
+                        거래게시일자
+                    </div>
+                    <div class="inputDesign inputDesignB">
+                        <input type="text" />
+                        <input type="text" />
+                        <input type="text" />
+                    </div>
+                </div>
+                <div class="formBox">
+                    <div class="formLabel">
+                        주요거래은행
+                    </div>
+                    <div class="inputDesign">
+                        <input type="text" />
+                    </div>
+                </div>
+            </div>
+            <div class="formGroup">
+                <div class="formBox">
+                    <div class="formLabel">
+                        관계회사
+                    </div>
+                    <div class="inputDesign relationCompany">
+                        <input type="text" disabled/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="groupTable">
+            <div class="containerTable">
+                <div class="formControl">
+                    <p class="tableTitle">담당자 정보</p>
+                    <button><img src="../img/icon_tablecell_plus.png" alt="아래에 테이블 행 추가"></button>
+                </div>
+                <table>
+                <thead>
+                    <tr>
+                    <th>담당업무</th>
+                    <th>부서</th>
+                    <th>직위</th>
+                    <th>성명</th>
+                    <th>전화번호</th>
+                    <th>FAX번호</th>
+                    <th>E-Mail</th>
+                    <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><button><img src="../img/icon_delete.png" alt="행 삭제"></button></th>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+            <div class="containerTable residence">
+                <div class="formControl">
+                    <p class="tableTitle">소재 정보</p>
+                    <button><img src="../img/icon_tablecell_plus.png" alt="아래에 테이블 행 추가"></button>
+                </div>
+                <table>
+                <thead>
+                    <tr>
+                    <td rowspan="2">소재구분</td>
+                    <td rowspan="2">주소</td>
+                    <td rowspan="2">전화번호</td>
+                    <td colspan="2">규모</td>
+                    <td colspan="2">종업원수</td>
+                    <td rowspan="2">노조유무</td>
+                    <td rowspan="2">생산품목</td>
+                    <td rowspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td>대지</td>
+                        <td>건물</td>
+                        <td>남</td>
+                        <td>여</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><button><img src="../img/icon_delete.png" alt="행 삭제"></button></th>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+            <div class="containerTable scale">
+                <div class="formControl">
+                    <p class="tableTitle">규모</p>
+                    <button><img src="../img/icon_tablecell_plus.png" alt="아래에 테이블 행 추가"></button>
+                </div>
+                <table>
+                <thead>
+                    <tr>
+                    <td rowspan="2">기준년도</td>
+                    <td colspan="2">매출액(천원)</td>
+                    <td colspan="2">순이익(천원)</td>
+                    <td colspan="2">자본금(천원)</td>
+                    <td rowspan="2">비고</td>
+                    <td rowspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td>금액</td>
+                        <td>%</td>
+                        <td>금액</td>
+                        <td>%</td>
+                        <td>금액</td>
+                        <td>%</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><button><img src="../img/icon_delete.png" alt="행 삭제"></button></th>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+            <div class="containerTable equipment">
+                <div class="formControl">
+                    <p class="tableTitle">주요설비 및 소유장비</p>
+                    <button><img src="../img/icon_tablecell_plus.png" alt="아래에 테이블 행 추가"></button>
+                </div>
+                <table>
+                <thead>
+                    <tr>
+                    <th>품명</th>
+                    <th>규격</th>
+                    <th>단위</th>
+                    <th>보유대수</th>
+                    <th>일일생산능력</th>
+                    <th>제조사</th>
+                    <th>비고</th>
+                    <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><button><img src="../img/icon_delete.png" alt="행 삭제"></button></th>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+            <div class="containerTable product">
+                <div class="formControl">
+                    <p class="tableTitle">주요생산제품</p>
+                    <button><img src="../img/icon_tablecell_plus.png" alt="아래에 테이블 행 추가"></button>
+                </div>
+                <table>
+                <thead>
+                    <tr>
+                    <td rowspan="2">품명</td>
+                    <td rowspan="2">규격</td>
+                    <td rowspan="2">단위</td>
+                    <td colspan="3">생산량</td>
+                    <td rowspan="2">년간매출금액(천원)</td>
+                    <td rowspan="2">비고</td>
+                    <td rowspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td>월일</td>
+                        <td>월간</td>
+                        <td>년간</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><button><img src="../img/icon_delete.png" alt="행 삭제"></button></th>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+            <div class="containerTable">
+                <div class="formControl">
+                    <p class="tableTitle">주요업체 거래실적</p>
+                    <button><img src="../img/icon_tablecell_plus.png" alt="아래에 테이블 행 추가"></button>
+                </div>
+                <table>
+                <thead>
+                    <tr>
+                    <th>거래일자</th>
+                    <th>회사명</th>
+                    <th>현장명</th>
+                    <th>품명</th>
+                    <th>규격</th>
+                    <th>단위</th>
+                    <th>남품수량</th>
+                    <th>담당자</th>
+                    <th>전화번호</th>
+                    <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><button><img src="../img/icon_delete.png" alt="행 삭제"></button></th>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+            <div class="containerTable sameIndustry">
+                <div class="formControl">
+                    <p class="tableTitle">동종업계 현황</p>
+                    <button><img src="../img/icon_tablecell_plus.png" alt="아래에 테이블 행 추가"></button>
+                </div>
+                <table>
+                <thead>
+                    <tr>
+                    <td rowspan="2">매출액 순위</td>
+                    <td rowspan="2">회사명</td>
+                    <td rowspan="2">대표자</td>
+                    <td rowspan="2">주소</td>
+                    <td rowspan="2">전화번호</td>
+                    <td colspan="2">규모(평)</td>
+                    <td colspan="2">종업원</td>
+                    <td rowspan="2">매출액(천원)</td>
+                    <td rowspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td>본사</td>
+                        <td>공장</td>
+                        <td>남</td>
+                        <td>여</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><button><img src="../img/icon_delete.png" alt="행 삭제"></button></th>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+            <div class="containerTable">
+                <div class="formControl">
+                    <p class="tableTitle">품질인증 현황</p>
+                    <button><img src="../img/icon_tablecell_plus.png" alt="아래에 테이블 행 추가"></button>
+                </div>
+                <table>
+                <thead>
+                    <tr>
+                    <th>인증품목</th>
+                    <th>인증규격</th>
+                    <th>인증기관(업체)</th>
+                    <th>유효기간</th>
+                    <th>비고</th>
+                    <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><input type="text"></th>
+                    <th><button><img src="../img/icon_delete.png" alt="행 삭제"></button></th>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+        </div>
         <div class="bottomButtons">
             <button class="buttonCancle"><a href="../html/joinAgreement.html">취소</a></button>
             <button class="buttonConfirm"><a href="#">등록완료</a></button>
@@ -177,4 +542,8 @@
       </div>
       <p class="branchCopyright">COPYRIGHT 2022 KOREAZINC. ALL RIGHTS RESERVED.</p>
     </footer>
+
+    <script>
+
+    </script>
   </body>
