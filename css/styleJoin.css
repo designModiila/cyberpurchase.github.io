@@ -175,18 +175,32 @@ input[type="checkbox"] + label{
 .formField {
     margin-top: 29px;
     vertical-align: top;
+    margin-bottom: 60px;
 }
 .formGroup {
     font-size: 0;
+    margin-bottom: 20px;
 }
 .formGroup .inputDesign {
     max-width: 252px;
-    display: inline-block;
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.inputDesign input {
+    padding-left: 12px ;
+}
+.inputDesignB input:nth-child(1) {
+    width: 96px;
+}
+.inputDesignB input:nth-child(2), .inputDesign input:nth-child(3) {
+    width: 70px;
+}
+.formGroup:first-child {
+    margin-top: 0;
 }
 .formLabel {
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 18px;
     color: #909090;
 }
@@ -200,7 +214,7 @@ input[type="checkbox"] + label{
     height: 36px;
     text-align: center;
     border-radius: 4px;
-    margin-top: 8px;
+    vertical-align: bottom;
 
 }
 .idCheck:hover, .idCheck:active {
@@ -215,10 +229,6 @@ input[type="checkbox"] + label{
 .formBox:not(:first-child) {
     vertical-align: top;
 }
-.inputDesign input {
-    padding-left: 12px ;
-    z-index: 100;
-}
 .passwordMatch, .passwordUnmatch {
     margin-top: 4px;
     font-size: 12px;
@@ -231,4 +241,103 @@ input[type="checkbox"] + label{
 .passwordUnmatch {
     display: none;
     color: #FF7373;
+}
+
+.relationCompany {
+    position: relative;
+}
+.relationCompany::after {
+    background-image: url('../img/img_layer_popup.png');
+    width: 18px;
+    height: 18px;
+    content: '';
+    position: absolute;
+    top: 18px;
+    right: 12px;
+    cursor: pointer;
+}
+.groupTable .containerTable {
+    margin: 36px 0;
+}
+.groupTable .containerTable .formControl {
+    padding: 11px 14px 0 20px;
+}
+.groupTable .containerTable .formControl button {
+    float: right;
+}
+.groupTable .containerTable .formControl button {
+    padding: 6px;
+    border-radius: 4px;
+}
+.groupTable .containerTable .formControl button:hover, .groupTable .containerTable .formControl button:active {
+    background-color: #eee;
+}
+.tableTitle {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 30px;
+    color: #333;
+}
+.groupTable .containerTable tbody tr th {
+    padding: 5px 8px;
+}
+.groupTable .containerTable thead tr th:last-child, .groupTable .containerTable thead tr td:last-child
+, .groupTable .containerTable tbody tr th:last-child {
+    width: 41px;
+}
+.groupTable .containerTable tbody tr th input {
+    border: 1px solid #EDEDED;
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    padding-left: 12px;
+}
+.groupTable .containerTable tbody tr th:last-child {
+    padding: 0;
+}
+.groupTable .containerTable tbody tr th:last-child button {
+    text-align: center;
+    padding: 6px;
+}
+.groupTable .containerTable tbody tr th:last-child button:hover, .groupTable .containerTable tbody tr th:last-child button:active {
+    background-color: #eee;
+    padding: 6px;
+    border-radius: 4px;
+}
+
+.residence thead td:nth-child(2), .residence tbody td:nth-child(2) {
+    width: 260px;
+}
+.residence thead td:nth-child(3), .residence tbody td:nth-child(3) {
+    width: 132px;
+}
+.residence thead td:nth-child(7), .residence tbody td:nth-child(7) {
+    width: 180px;
+}
+.scale thead td:nth-child(5), .scale tbody td:nth-child(5) {
+    width: 360px;
+}
+.equipment thead th:nth-child(7), .equipment tbody td:nth-child(7) {
+    width: 260px;
+}
+.product thead td:nth-child(5), .product tbody th:nth-child(5),
+.product thead td:nth-child(6), .product tbody th:nth-child(6) {
+    width: 180px;
+}
+.sameIndustry thead td:nth-child(1), .sameIndustry tbody th:nth-child(1) {
+    width: 96px;
+}
+.sameIndustry thead td:nth-child(2), .sameIndustry tbody th:nth-child(2) {
+    width: 156px;
+}
+.sameIndustry thead td:nth-child(3), .sameIndustry tbody th:nth-child(3),
+.sameIndustry thead td:nth-child(5), .sameIndustry tbody th:nth-child(5) {
+    width: 132px;
+}
+.sameIndustry thead td:nth-child(4), .sameIndustry tbody th:nth-child(4) {
+    width: 216px;
+}
+.sameIndustry thead td:nth-child(8), .sameIndustry tbody th:nth-child(8) {
+    width: 156px;
 }
