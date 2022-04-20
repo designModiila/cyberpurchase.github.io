@@ -145,7 +145,6 @@
     width: 500px;
 }
 .gnb li {
-    flex-basis: 84px;
     flex-grow: 0;
     text-align: center;
 }
@@ -166,7 +165,7 @@
     border-radius: 6px;
 }
 .gnbHeader .gnb li a {
-    font-size: 14px; /*IE 폰트사이즈11이 되어야 한줄*/
+    font-size: 14px;
     line-height: 20px;
     font-weight: 500;
     color: #333;
