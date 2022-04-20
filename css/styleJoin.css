@@ -66,8 +66,8 @@
     border-radius: 4px;
     border: 1px solid #EDEDED;
     margin-top: 30px;
-/*     -ms-overflow-style: none; 
-    scrollbar-width: none; */
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
 }
 /* scrollbar custom */  
 .containerAgreement::-webkit-scrollbar {
@@ -147,13 +147,16 @@ input[type="checkbox"] + label{
     text-align: center;
     margin-top: 47px;
 }
+.bottomButtons a {
+    display: inline-block;
+}
 .bottomButtons button {
     width: 181px;
     height: 46px;
     border-radius: 4px;
     background-color: #fff;
 }
-.bottomButtons .buttonCancle a, .bottomButtons a .buttonConfirm  {
+.bottomButtons a .buttonCancle, .bottomButtons a .buttonConfirm  {
     display: block;
     width: 181px;
     height: 46px;
