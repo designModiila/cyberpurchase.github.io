@@ -1,5 +1,4 @@
 /* 구매공고 검색 */
-
 .pageTitle {
     display: block;
 }
@@ -21,9 +20,6 @@
 .containerSearchArea .inputDateTerm {
     width: 120px;
 }
-.containerSearchArea .inputDateTerm:last-child label {
-    color : #F5F5F5;
-}
 
 /* table */
 thead .tableThName {
@@ -39,7 +35,6 @@ thead .tableThName::after {
     top: 16px;
     content: '';
 }
-
 
 .containerAgreement {
     width: 100%;
