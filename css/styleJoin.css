@@ -9,7 +9,7 @@
     float: right;
 }
 .containerProcess ul {
-    font-size: 0;
+    /* font-size: 0; */
     width: 364px;
     height: 34px;
     padding: 0 2px;
@@ -190,7 +190,7 @@ input[type="checkbox"] + label{
     margin-bottom: 60px;
 }
 .formGroup {
-    font-size: 0;
+    /* font-size: 0; */
     margin-bottom: 20px;
 }
 .formGroup .inputDesign {
