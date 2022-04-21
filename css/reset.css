@@ -139,7 +139,7 @@ a:focus, a:active, a:visited {
     outline-offset:0;
     outline-style:none;
 }
-a:focus, button:focus {
+a:focus, button:focus, span:focus, div:focus {
     outline: none;
 }
 
