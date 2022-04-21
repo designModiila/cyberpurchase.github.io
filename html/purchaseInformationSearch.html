@@ -73,13 +73,27 @@
         <div class="containerSearchArea">
           <div class="inputDesign inputSelectbox">
             <label for="company">입찰업체</label>
-            <input type="text" name="company" />
+            <div class="form_control_input">
+              <div class="custom_select_wrap_input">
+                <div class="custom_select_box_input" tabindex="0">
+                  <span class="custom_select_text_input">입찰업체01</span>
+                </div>
+                <ul class="custom_select_list_input" style="display: none;" >
+                  <li value="select_option1" class="custom_select_option_input">입찰업체01</li>
+                  <li value="select_option2" class="custom_select_option_input">입찰업체02</li>
+                  <li value="select_option3" class="custom_select_option_input">입찰업체03</li>
+                </ul>
+                <select class="select_origin_input">
+                    <option value="select_option1_input">입찰업체01</option>
+                    <option value="select_option2_input">입찰업체02</option>
+                    <option value="select_option3_input">입찰업체03</option>
+                </select>
+              </div>
+            </div>
           </div>
           <div class="inputDesign inputBox">
-            <form>
-              <label for="number">구매공고번호</label>
-              <input type="text" name="number" id="number" />
-            </form>
+            <label for="number">구매공고번호</label>
+            <input type="text" name="number" id="number" />
           </div>
           <div class="inputDesign inputBox">
             <label for="name">구매공고명</label>
@@ -87,19 +101,35 @@
           </div>
           <div class="inputDesign inputPopup">
             <label for="category">대분류</label>
-            <input type="text" name="category" id="category" />
+            <input type="text" name="category" id="category" disabled />
           </div>
           <div class="inputDesign inputSelectbox">
             <label for="status">공고상태</label>
-            <input type="text" name="status" id="status" />
+            <div class="form_control_input">
+              <div class="custom_select_wrap_input">
+                <div class="custom_select_box_input" tabindex="0">
+                  <span class="custom_select_text_input">공고상태01</span>
+                </div>
+                <ul class="custom_select_list_input" style="display: none;" >
+                  <li value="select_option1" class="custom_select_option_input">공고상태01</li>
+                  <li value="select_option2" class="custom_select_option_input">공고상태02</li>
+                  <li value="select_option3" class="custom_select_option_input">공고상태03</li>
+                </ul>
+                <select class="select_origin_input">
+                    <option value="select_option1_input">공고상태01</option>
+                    <option value="select_option2_input">공고상태02</option>
+                    <option value="select_option3_input">공고상태03</option>
+                </select>
+              </div>
+            </div>
           </div>
           <div class="inputDesign inputDateTerm">
             <label for="period01">공고기간</label>
-            <input type="text" name="period01" id="period01" />
+            <input type="text" name="period01" id="period01" disabled />
           </div>
           <div class="inputDesign inputDateTerm">
-            <label for="period02">공고기간</label>
-            <input type="text" name="period02" id="period02" />
+            <label for="period02" style="opacity: 0;">공고기간</label>
+            <input type="text" name="period02" id="period02" disabled />  
           </div>
           <button type="submit" class="searchAreaButton">검색</button>
         </div>
@@ -267,7 +297,7 @@
     <p class="branchCopyright">COPYRIGHT 2022 KOREAZINC. ALL RIGHTS RESERVED.</p>
   </footer>
     <script>
-      // selectbox dropdown
+      // table selectbox dropdown
       let selectCustomFlag;
           $('.custom_select_box').on('click', function() {
             $(this).toggleClass('selected');
@@ -307,6 +337,55 @@
             $('.custom_select_list').hide();
 
             $('.select_origin').find('option').each(function(index, el) {
+              if($(el).attr('value') == value) {
+                $(el).attr('selected', 'selected');
+              } else {
+                $(el).removeAttr('selected');
+              }
+            });
+          }); 
+    </script>
+    <script>
+      // input selectbox dropdown
+      let selectCustomFlag;
+          $('.custom_select_box_input').on('click', function() {
+            $(this).toggleClass('selected');
+            if($(this).hasClass('selected')) {
+              $('.custom_select_list_input').show();
+            } else {
+              $('.custom_select_list_input').hide();
+            }
+          })
+
+          $('.custom_select_box_input').on('focusin', function() {
+            $('.custom_select_list_input').show();
+          });
+
+          $('.custom_select_box_input').on('focusout', function() {
+            if(!selectCustomFlag) {
+              $('.custom_select_list_input').hide();
+            }
+            $(this).removeClass('selected');
+          });
+
+          $('.custom_select_option_input').on('mouseenter', function() {
+            selectCustomFlag = true;
+          
+          });
+
+          $('.custom_select_option_input').on('mouseout', function() {
+            selectCustomFlag = false;
+          });
+
+          $('.custom_select_option_input').on('click', function() {
+            let value = $(this).attr('value');
+            $(".custom_select_option_input").removeClass("selected");
+            $(this).addClass("selected");
+            $('.custom_select_text_input').text($(this).text());
+            $('.select_origin_input').val(value);
+            $('.custom_select_list_input').hide();
+
+            $('.select_origin_input').find('option').each(function(index, el) {
               if($(el).attr('value') == value) {
                 $(el).attr('selected', 'selected');
               } else {
