@@ -90,9 +90,14 @@
     height: 80px;
     display: block;
     width: 100%;
-    min-width: 1280px;
     position: fixed;
+    -webkit-transform: translateZ(0);
+    overflow-x: auto;
+    -ms-overflow-style: none;
     z-index: 10;
+}
+.header::-webkit-scrollbar { 
+    display: none;
 }
 .inner {
     position: relative;
@@ -242,13 +247,18 @@ body {
 .containerFloating {
     /* display: none; */
     position: fixed;
+    -webkit-transform: translateZ(0);
     bottom: 0;
     width: 100%;
     height: 70px;
     background-color: #595d63;
     opacity: 0.95;
     z-index: 10;
-    overflow: auto;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+}
+.containerFloating::-webkit-scrollbar { 
+display: none;
 }
 .loginBottomFloating {
     display: flex;
