@@ -182,7 +182,7 @@
                     <p class="containerTitle">신규 공개구매공고</p>
                     <a class="more">더보기</a>
                     <div class="clear"></div>
-                    <div id="purchase"></div>
+                    <div id="grid"></div>
                 </div>
             </div>
         </div>
@@ -371,7 +371,7 @@
 
         const Grid = tui.Grid;
         const instance = new Grid({
-            el: document.getElementById('purchase'), // Container element
+            el: document.getElementById('grid'), // Container element
             columns: [
                 { header: '공고번호', name: 'number' },
                 { header: '공고명', name: 'name' },
