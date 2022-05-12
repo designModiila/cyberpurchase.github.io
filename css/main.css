@@ -548,6 +548,7 @@
 }
 #grid .tui-grid-container * {
     text-align: center;
+    border: 0;
 }
 #grid .tui-grid-body-area .tui-grid-cell {
     background-color: #fff;
@@ -567,4 +568,9 @@
     font-size: 14px;
     font-weight: 500;
     color: #595967;
+}
+#grid .tui-grid-scrollbar-y-inner-border,
+#grid .tui-grid-scrollbar-right-bottom {
+    border: none;
+    background-color: #fff;
 }
