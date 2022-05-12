@@ -27,6 +27,14 @@
     <link rel="stylesheet" href="../css/common.css" />
     <link rel="stylesheet" href="../css/styleJoin.css" />
 
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../js/vendor/tui/tui-grid.min.css">
+    <link rel="stylesheet" href="../js/vendor/tui/datepicker/tui-date-picker.min.css" />
+    <link rel="stylesheet" href="../js/vendor/tui/pagination/tui-pagination.min.css">
+    <script type="text/javascript" src="../js/vendor/tui/datepicker/tui-date-picker.min.js"></script>
+    <script type="text/javascript" src="../js/vendor/tui/pagination/tui-pagination.min.js"></script>
+    <script type="text/javascript" src="../js/vendor/tui/tui-grid.min.js"></script>
+
   </head>
   <body>
     <div class="containerPopup popupSameId">
@@ -59,7 +67,7 @@
         <nav class="gnbHeader">
           <h2 class="hide">대메뉴</h2>
           <ul class="gnb">
-            <li><a href="../html/purchaseInformationSearch.html" class="gnbunSelected">공개구매정보</a></li>
+            <li><a href="../html/purchaseInformationNow.html" class="gnbunSelected">공개구매정보</a></li>
             <li><a href="#" class="gnbunSelected">구매공고결과</a></li>
             <li><a href="#" class="gnbunSelected">나의구매정보</a></li>
             <li><a href="#" class="gnbunSelected">공지사항</a></li>
@@ -90,9 +98,35 @@
             </ul>
         </div>
         <div class="clear"></div>
-        <p class="pageSubTitle">가입정보 입력 (필수)</p>
+        <div class="container_information margin_design">
+            <p class="pageSubTitle">가입정보 입력 (필수)</p>
         <span class="pageDescription">회원 등록에 필요한 가입정보를 입력해주세요.</span>
         <div class="formField">
+            <div class="formGroup">
+                <div class="formBox">
+                    <div class="formLabel">
+                        참여희망기업
+                    </div>
+                    <div class="container_checkbox">
+                        <div class="checkbox02">
+                            <input type="checkbox" id="kzinc">
+                            <label for="kzinc"></label>
+                            <span class="checkboxText02">고려아연</span>
+                        </div>
+                        <div class="checkbox02">
+                            <input type="checkbox" id="kzam">
+                            <label for="kzam"></label>
+                            <span class="checkboxText02">KZAM</span>
+                        </div>
+                        <div class="checkbox02">
+                            <input type="checkbox" id="zoc">
+                            <label for="zoc"></label>
+                            <span class="checkboxText02">ZOC</span>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
             <div class="formGroup">
                 <div class="formBox">
                     <div class="formLabel">
@@ -127,398 +161,114 @@
                     <p class="passwordUnmatch">비밀번호가 일차히지 않습니다.</p>
                 </div>
             </div>
-            <div class="formGroup">
-                <div class="formBox">
-                    <div class="formLabel">
-                        회사명
-                        <span class="blind">필수</span>
+        </div>
+        </div>
+        <div class="container_information">
+            <p class="pageSubTitle">가입정보 입력 (선택)</p>
+            <span class="pageDescription">다음 중 기업에 해당하는 항목만 기입해주세요.</span>
+            <div class="formField">
+                <div class="formGroup">
+                    <div class="formBox">
+                        <div class="formLabel">
+                            회사명
+                            <span class="blind">필수</span>
+                        </div>
+                        <div class="inputDesign">
+                            <input type="text" required>
+                        </div>
                     </div>
-                    <div class="inputDesign">
-                        <input type="text" required>
-                    </div>
-                </div>
-                <div class="formBox">
-                    <div class="formLabel">
-                        사업자등록번호
-                        <span class="blind">필수</span>
-                    </div>
-                    <div class="inputDesign">
-                        <input type="text" required>
-                    </div>
-                </div>
-                <div class="formBox">
-                    <div class="formLabel">
-                        대표자
-                        <span class="blind">필수</span>
-                    </div>
-                    <div class="inputDesign">
-                        <input type="text" required>
+                    <div class="formBox">
+                        <div class="formLabel">
+                            사업자등록번호
+                        </div>
+                        <div class="inputDesign">
+                            <input type="text" required>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="formGroup">
-                <div class="formBox">
-                    <div class="formLabel">
-                        업종
-                        <span class="blind">필수</span>
+                <div class="formGroup">
+                    <div class="formBox">
+                        <div class="formLabel">
+                            대표자명
+                        </div>
+                        <div class="inputDesign">
+                            <input type="text" required>
+                        </div>
                     </div>
-                    <div class="inputDesign">
-                        <input type="text" required>
+                    <div class="formBox">
+                        <div class="formLabel">
+                            수신공고 수신 E-mail
+                        </div>
+                        <div class="inputDesign">
+                            <input type="text" required>
+                        </div>
                     </div>
                 </div>
-                <div class="formBox">
-                    <div class="formLabel">
-                        업태
-                        <span class="blind">필수</span>
+                <div class="formGroup">
+                    <div class="formBox">
+                        <div class="formLabel">
+                            업종
+                        </div>
+                        <div class="inputDesign">
+                            <input type="text" required>
+                        </div>
                     </div>
-                    <div class="inputDesign">
-                        <input type="text" required>
+                    <div class="formBox">
+                        <div class="formLabel">
+                            업태
+                        </div>
+                        <div class="inputDesign">
+                            <input type="text" required>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <p class="pageSubTitle">가입정보 입력 (선택)</p>
-        <span class="pageDescription">다음 중 기업에 해당하는 항목만 기입해주세요.</span>
-        <div class="formField">
-            <div class="formGroup">
-                <div class="formBox">
-                    <div class="formLabel">
-                        설립일자
-                    </div>
-                    <div class="inputDesign inputDesignB">
-                        <input type="text" />
-                        <input type="text" />
-                        <input type="text" />
-                    </div>
+        <div class="clear"></div>
+        <div id="container_tab">
+            <div class="tabs_nav">
+              <ul>
+                <li class="active"><a href="#tab1">기업 정보</a></li>
+                <li><a href="#tab2">담당자 정보</a></li>
+                <li><a href="#tab3">소재 정보</a></li>
+                <li><a href="#tab4">규모</a></li>
+                <li><a href="#tab5">주요설비 및 장비</a></li>
+                <li><a href="#tab6">주요생산제품</a></li>
+                <li><a href="#tab7">주요업체 거래실적</a></li>
+                <li><a href="#tab8">동종업계 현황</a></li>
+                <li><a href="#tab9">품질인증 현황</a></li>
+              </ul>
+            </div>   
+            <section class="tabs_content">
+                <div class="containerTable" id="tab1">
+                    <div id="wrapper_company"></div>
                 </div>
-                <div class="formBox">
-                    <div class="formLabel">
-                        상표
-                    </div>
-                    <div class="inputDesign">
-                        <input type="text" />
-                    </div>
+                <div class="containerTable" id="tab2">
+                    <div id="wrapper_manager"></div>
                 </div>
-            </div>
-            <div class="formGroup">
-                <div class="formBox">
-                    <div class="formLabel">
-                        거래게시일자
-                    </div>
-                    <div class="inputDesign inputDesignB">
-                        <input type="text" />
-                        <input type="text" />
-                        <input type="text" />
-                    </div>
+                <div class="containerTable" id="tab3">
+                    <div id="wrapper_material"></div>
                 </div>
-                <div class="formBox">
-                    <div class="formLabel">
-                        주요거래은행
-                    </div>
-                    <div class="inputDesign">
-                        <input type="text" />
-                    </div>
+                <div class="containerTable" id="tab4">
+                    <div id="wrapper_scale"></div>
                 </div>
-            </div>
-            <div class="formGroup">
-                <div class="formBox">
-                    <div class="formLabel">
-                        관계회사
-                    </div>
-                    <div class="inputDesign relationCompany">
-                        <input type="text" disabled/>
-                    </div>
+                <div class="containerTable" id="tab5">
+                    <div id="wrapper_equipment"></div>
                 </div>
-            </div>
-        </div>
-        <div class="groupTable">
-            <div class="containerTable">
-                <div class="formControl">
-                    <p class="tableTitle">담당자 정보</p>
-                    <button><img src="../img/icon_tablecell_plus.png" alt="아래에 테이블 행 추가"></button>
+                <div class="containerTable" id="tab6">
+                    <div id="wrapper_product"></div>
                 </div>
-                <table>
-                <thead>
-                    <tr>
-                    <th>담당업무</th>
-                    <th>부서</th>
-                    <th>직위</th>
-                    <th>성명</th>
-                    <th>전화번호</th>
-                    <th>FAX번호</th>
-                    <th>E-Mail</th>
-                    <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><button><img src="../img/icon_delete.png" alt="행 삭제"></button></th>
-                    </tr>
-                </tbody>
-                </table>
-            </div>
-            <div class="containerTable residence">
-                <div class="formControl">
-                    <p class="tableTitle">소재 정보</p>
-                    <button><img src="../img/icon_tablecell_plus.png" alt="아래에 테이블 행 추가"></button>
+                <div class="containerTable" id="tab7">
+                    <div id="wrapper_performance"></div>
                 </div>
-                <table>
-                <thead>
-                    <tr>
-                    <td rowspan="2">소재구분</td>
-                    <td rowspan="2">주소</td>
-                    <td rowspan="2">전화번호</td>
-                    <td colspan="2">규모</td>
-                    <td colspan="2">종업원수</td>
-                    <td rowspan="2">노조유무</td>
-                    <td rowspan="2">생산품목</td>
-                    <td rowspan="2"></td>
-                    </tr>
-                    <tr>
-                        <td>대지</td>
-                        <td>건물</td>
-                        <td>남</td>
-                        <td>여</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><button><img src="../img/icon_delete.png" alt="행 삭제"></button></th>
-                    </tr>
-                </tbody>
-                </table>
-            </div>
-            <div class="containerTable scale">
-                <div class="formControl">
-                    <p class="tableTitle">규모</p>
-                    <button><img src="../img/icon_tablecell_plus.png" alt="아래에 테이블 행 추가"></button>
+                <div class="containerTable" id="tab8">
+                    <div id="wrapper_industry"></div>
                 </div>
-                <table>
-                <thead>
-                    <tr>
-                    <td rowspan="2">기준년도</td>
-                    <td colspan="2">매출액(천원)</td>
-                    <td colspan="2">순이익(천원)</td>
-                    <td colspan="2">자본금(천원)</td>
-                    <td rowspan="2">비고</td>
-                    <td rowspan="2"></td>
-                    </tr>
-                    <tr>
-                        <td>금액</td>
-                        <td>%</td>
-                        <td>금액</td>
-                        <td>%</td>
-                        <td>금액</td>
-                        <td>%</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><button><img src="../img/icon_delete.png" alt="행 삭제"></button></th>
-                    </tr>
-                </tbody>
-                </table>
-            </div>
-            <div class="containerTable equipment">
-                <div class="formControl">
-                    <p class="tableTitle">주요설비 및 소유장비</p>
-                    <button><img src="../img/icon_tablecell_plus.png" alt="아래에 테이블 행 추가"></button>
+                <div class="containerTable" id="tab9">
+                    <div id="wrapper_quality"></div>
                 </div>
-                <table>
-                <thead>
-                    <tr>
-                    <th>품명</th>
-                    <th>규격</th>
-                    <th>단위</th>
-                    <th>보유대수</th>
-                    <th>일일생산능력</th>
-                    <th>제조사</th>
-                    <th>비고</th>
-                    <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><button><img src="../img/icon_delete.png" alt="행 삭제"></button></th>
-                    </tr>
-                </tbody>
-                </table>
-            </div>
-            <div class="containerTable product">
-                <div class="formControl">
-                    <p class="tableTitle">주요생산제품</p>
-                    <button><img src="../img/icon_tablecell_plus.png" alt="아래에 테이블 행 추가"></button>
-                </div>
-                <table>
-                <thead>
-                    <tr>
-                    <td rowspan="2">품명</td>
-                    <td rowspan="2">규격</td>
-                    <td rowspan="2">단위</td>
-                    <td colspan="3">생산량</td>
-                    <td rowspan="2">년간매출금액(천원)</td>
-                    <td rowspan="2">비고</td>
-                    <td rowspan="2"></td>
-                    </tr>
-                    <tr>
-                        <td>월일</td>
-                        <td>월간</td>
-                        <td>년간</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><button><img src="../img/icon_delete.png" alt="행 삭제"></button></th>
-                    </tr>
-                </tbody>
-                </table>
-            </div>
-            <div class="containerTable">
-                <div class="formControl">
-                    <p class="tableTitle">주요업체 거래실적</p>
-                    <button><img src="../img/icon_tablecell_plus.png" alt="아래에 테이블 행 추가"></button>
-                </div>
-                <table>
-                <thead>
-                    <tr>
-                    <th>거래일자</th>
-                    <th>회사명</th>
-                    <th>현장명</th>
-                    <th>품명</th>
-                    <th>규격</th>
-                    <th>단위</th>
-                    <th>남품수량</th>
-                    <th>담당자</th>
-                    <th>전화번호</th>
-                    <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><button><img src="../img/icon_delete.png" alt="행 삭제"></button></th>
-                    </tr>
-                </tbody>
-                </table>
-            </div>
-            <div class="containerTable sameIndustry">
-                <div class="formControl">
-                    <p class="tableTitle">동종업계 현황</p>
-                    <button><img src="../img/icon_tablecell_plus.png" alt="아래에 테이블 행 추가"></button>
-                </div>
-                <table>
-                <thead>
-                    <tr>
-                    <td rowspan="2">매출액 순위</td>
-                    <td rowspan="2">회사명</td>
-                    <td rowspan="2">대표자</td>
-                    <td rowspan="2">주소</td>
-                    <td rowspan="2">전화번호</td>
-                    <td colspan="2">규모(평)</td>
-                    <td colspan="2">종업원</td>
-                    <td rowspan="2">매출액(천원)</td>
-                    <td rowspan="2"></td>
-                    </tr>
-                    <tr>
-                        <td>본사</td>
-                        <td>공장</td>
-                        <td>남</td>
-                        <td>여</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><button><img src="../img/icon_delete.png" alt="행 삭제"></button></th>
-                    </tr>
-                </tbody>
-                </table>
-            </div>
-            <div class="containerTable">
-                <div class="formControl">
-                    <p class="tableTitle">품질인증 현황</p>
-                    <button><img src="../img/icon_tablecell_plus.png" alt="아래에 테이블 행 추가"></button>
-                </div>
-                <table>
-                <thead>
-                    <tr>
-                    <th>인증품목</th>
-                    <th>인증규격</th>
-                    <th>인증기관(업체)</th>
-                    <th>유효기간</th>
-                    <th>비고</th>
-                    <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><input type="text"></th>
-                    <th><button><img src="../img/icon_delete.png" alt="행 삭제"></button></th>
-                    </tr>
-                </tbody>
-                </table>
-            </div>
-        </div>
+            </section>
+          </div>
         <div class="bottomButtons">
             <a href="../html/joinAgreement.html"><button class="buttonCancle">취소</button></a>
             <a href="#"><button class="buttonConfirm">등록완료</button></a>
@@ -543,6 +293,320 @@
     </footer>
 
     <script>
-       
+$(document).ready(function(){
+    
+    $('.tabs_nav a').click(function() {
+      
+      // Check for active
+      $('.tabs_nav li').removeClass('active');
+      $(this).parent().addClass('active');
+  
+      // Display active tab
+      let currentTab = $(this).attr('href');
+      $('.tabs_content>div').hide();
+      $(currentTab).show();
+  
+      if ($('#tab2').css('display') == 'block') {
+          openTabGrid();
+      } else if ($('#tab3').css('display') == 'block'){
+          openTabGrid2();
+      } else if ($('#tab4').css('display') == 'block'){
+          openTabGrid3();
+      } else if ($('#tab5').css('display') == 'block'){
+          openTabGrid4();
+      } else if ($('#tab6').css('display') == 'block'){
+          openTabGrid5();
+      } else if ($('#tab7').css('display') == 'block'){
+          openTabGrid6();
+      } else if ($('#tab8').css('display') == 'block'){
+          openTabGrid7();
+      } else if ($('#tab9').css('display') == 'block'){
+          openTabGrid8();
+      } else if ($('#tab1').css('display') == 'block'){
+          openTabGrid();
+      }
+  
+      return false;
+      
+    });
+   
+  });
+  
+  
+  
+  const grid = new tui.Grid({
+            el: document.getElementById('wrapper_company'),
+            columns: [
+              { header: '설립일자', name: 'founding_date', editor: 'datePicker' },
+              { header: '거래게시일자', name: 'post_date', editor: 'datePicker' },
+              { header: '상표', name: 'brand', editor: 'text' },
+              { header: '주요거래은행', name: 'bank', editor: 'text' },
+              { header: '관계회사', name: 'affiliates', editor: 'text' },
+              { header: '', name: 'icon', width: '42' }
+            ],
+            data: [
+              {
+                founding_date: '2022.04.12',
+                post_date: '2022.04.12',
+                brand: '상표',
+                bank: '신한은행',
+                affiliates: '관계회사',
+                icon: '삭제버튼'
+              }
+            ],
+          });
+      function openTabGrid() {
+      const grid2 = new tui.Grid({
+            el: document.getElementById('wrapper_manager'),
+            columns: [
+              { header: '담당업무', name: 'task', editor: 'text' },
+              { header: '부서', name: 'part', editor: 'text' },
+              { header: '직위', name: 'rank', editor: 'text' },
+              { header: '성명', name: 'name', editor: 'text' },
+              { header: '전화번호', name: 'tel', editor: 'text' },
+              { header: 'FAX번호', name: 'fax', editor: 'text' },
+              { header: 'E-Mail', name: 'email', editor: 'text', width: '240'  },
+              { header: '', name: 'icon', width: '42' }
+            ],
+            data: [
+              {
+                task: '디자인 및 퍼블리싱',
+                part: '디자인팀',
+                rank: '과장',
+                name: '신효정',
+                tel: '02-1234-1232',
+                fax: '02-1234-1234',
+                email: 'hjdesign@koreazinc.co.kr',
+                icon: '삭제버튼'
+              }
+            ]
+          });
+    }
+  
+    function openTabGrid2() {
+      const grid3 = new tui.Grid({
+            el: document.getElementById('wrapper_material'),
+            columns: [
+              { header: '소재구분', name: 'material_classification', editor: 'text' },
+              { header: '주소', name: 'address', editor: 'text', width: 270 },
+              { header: '전화번호', name: 'tel_material', editor: 'text', width: 120 },
+              { header: '규모', name: 'scale_material', editor: 'text' },
+              { header: '대지', name: 'site_material', editor: 'text' },
+              { header: '건물', name: 'building_material', editor: 'text' },
+              { header: '종업원수', name: 'count_manager', editor: 'text' },
+              { header: '남', name: 'male', editor: 'text' },
+              { header: '여', name: 'female', editor: 'text' },
+              { header: '노조유무', name: 'union_exist', editor: 'text' },
+              { header: '생산품목', name: 'product_material', editor: 'text' },
+              { header: '', name: 'icon', width: 42 }
+            ],
+             data: [
+            {
+              material_classification: '소재구분',
+              address: '주소',
+              tel_material: '전화번호',
+              scale_material: '규모',
+              site_material: '대지',
+              building_material: '건물',
+              count_manager: '종업원수',
+              male: '남',
+              female: '여',
+              union_exist: '노조유무',
+              product_material: '생산품목',
+              icon: '삭제버튼'
+            }
+             ]
+          });
+    }
+
+    function openTabGrid3() {
+      const grid4 = new tui.Grid({
+              el: document.getElementById('wrapper_scale'),
+              columns: [
+                  { header: '매출액 순위', name: 'col1' },
+                  { header: '회사명', name: 'col2' },
+                  { header: '대표자', name: 'col3' },
+                  { header: '주소', name: 'col4', width: 270 },
+                  { header: '전화번호', name: 'col5' },
+                  { header: '본사', name: 'col7' },
+                  { header: '공장', name: 'col8' },
+                  { header: '남', name: 'col10' },
+                  { header: '여', name: 'col11' },
+                  { header: '매출액(천원)', name: 'col12' },
+                  { header: '', name: 'icon', width: 42 }
+              ],
+              header: {
+                height: 80,
+                  complexColumns: [
+                  {
+                      header: '규모 (평)',
+                      name: 'col6', 
+                      childNames: ['col7', 'col8']            
+                  },
+                  {
+                      header: '종업원',
+                      name: 'col9', 
+                      childNames: ['col10', 'col11']            
+                  }
+                  ]
+              }
+          });
+    }
+
+    function openTabGrid4() {
+       const grid5 = new tui.Grid({
+            el: document.getElementById('wrapper_equipment'),
+            columns: [
+                { header: '기준년도', name: 'base_year', editor: 'datePicker' },
+                { header: '금액', name: 'price01' },
+                { header: '%', name: 'percent01' },
+                { header: '금액', name: 'price02' },
+                { header: '%', name: 'percent02' },
+                { header: '금액', name: 'price03' },
+                { header: '%', name: 'percent03' },
+                { header: '비고', name: 'note' },
+                { header: '', name: 'icon', width: 42 },
+            ],
+            header: {
+                height: 80,
+                complexColumns: [
+                {
+                    header: '매출액(천원)',
+                    name: 'sales',
+                    childNames: ['price01', 'percent01']
+                },
+                {
+                    header: '순이익(천원)',
+                    name: 'profit',
+                    childNames: ['price02', 'percent02']
+                },
+                {
+                    header: '자본금(천원)',
+                    name: 'capital',
+                    childNames: ['price03', 'percent03']
+                }
+                ]
+            }
+            });
+        }
+
+    function openTabGrid5() {
+        const grid6 = new tui.Grid({
+                el: document.getElementById('wrapper_product'),
+                columns: [
+                { header: '품명', name: 'product_name' },
+                { header: '규격', name: 'standard' },
+                { header: '단위', name: 'unit' },
+                { header: '보유대수', name: 'number_units' },
+                { header: '일일생산능력', name: 'production_capacity' },
+                { header: '제조사', name: 'manufacturing_company' },
+                { header: '비고', name: 'note' },
+                { header: '', name: 'icon', width: 42 }
+                ],
+                data: [
+                {
+                product_name: '품명',
+                standard: '규격',
+                unit: '단위',
+                number_units: '보유대수',
+                production_capacity: '일일생산능력',
+                manufacturing_company: '제조사',
+                note: '비고',
+                icon: '삭제버튼'
+                }
+                ]
+          });
+       }
+
+    function openTabGrid6() {
+        const grid7 = new tui.Grid({
+            el: document.getElementById('wrapper_performance'), 
+            columns: [
+            { header: '거래일자', name: 'transaction_date', editor: 'datePicker' },
+            { header: '회사명', name: 'company_name' },
+            { header: '현장명', name: 'location_name' },
+            { header: '품명', name: 'product_name' },
+            { header: '규격', name: 'standard' },
+            { header: '단위', name: 'unit' },
+            { header: '남품수량', name: 'delivery_quantity' },
+            { header: '담당자', name: 'manager_name' },
+            { header: '전화번호', name: 'tel' },
+            { header: '', name: 'icon', width: 42 },
+            ],
+            data: [
+            {
+            transaction_date: '2022.04.12',
+            company_name: '고려아연',
+            location_name: '현장명',
+            product_name: '품명',
+            standard: '규격',
+            unit: '단위',
+            delivery_quantity: '납품수량',
+            manager_name: '담당자',
+            tel: '전화번호',
+            icon: '삭재버튼'
+            }
+            ]
+        });
+    }
+
+    function openTabGrid7() {
+        const grid8 = new tui.Grid({
+        el: document.getElementById('wrapper_industry'),
+        columns: [
+            { header: '매출액 순위', name: 'rank_sales' },
+            { header: '회사명', name: 'company_name' },
+            { header: '대표자', name: 'representative' },
+            { header: '주소', name: 'address', width: 270 },
+            { header: '전화번호', name: 'tel_industry' },
+            { header: '본사', name: 'head_office' },
+            { header: '공장', name: 'factory' },
+            { header: '남', name: 'male' },
+            { header: '여', name: 'female' },
+            { header: '매출액(천원)', name: 'take' },
+            { header: '', name: 'icon', width: 42 },
+        ],
+        header: {
+            height: 80,
+            complexColumns: [
+            {
+                header: '규모 (평)',
+                name: 'scale_industry',
+                childNames: ['head_office', 'factory']
+            },
+            {
+                header: '종업원',
+                name: 'Employee',
+                childNames: ['male', 'female']
+            }
+            ]
+        }
+        });
+    }
+
+    function openTabGrid8() {
+        const grid9 = new tui.Grid({
+            el: document.getElementById('wrapper_quality'),
+            columns: [
+            { header: '인증품목', name: 'certified_items' },
+            { header: '인증규격', name: 'certification_standard' },
+            { header: '인증기관 (업체)', name: 'certification_company' },
+            { header: '유효기간', name: 'valid_organization' },
+            { header: '비고', name: 'note', width: 270 },
+            { header: '', name: 'icon', width: 42 },
+            ],
+            data: [
+            {
+            certified_items: '인증품목',
+            certification_standard: '인증규격',
+            certification_company: '인증기관',
+            valid_organization: '유효기간',
+            note: '비고',
+            icon: '삭제버튼'
+            }
+            ]
+        });
+    }
     </script>
-  </body>
+</body>
+</html>

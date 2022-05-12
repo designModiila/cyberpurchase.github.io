@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width"
+        />
+        <meta name="format-detection" content="telephone=no, address=no, email=no" />
+
+        <meta name="title" content="KZ CYBER PURCHASE" />
+        <meta name="description" content="고려아연에서 운영하는 구매입찰견적서비스입니다." />
+        <meta name="keywords" content="고려아연, 입찰, 구매, 견적, 서비스" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="" />
+
+        <meta property="og:title" content="KZ CYBER PURCHASE" />
+        <meta property="og:description" content="고려아연에서 운영하는 구매입찰견적서비스입니다." />
+        <meta property="og:image" content="../img/main_logo_color.png" />
+
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+        <meta http-equiv="Pragma" content="no-cache">
+        <base href="../html/main.html">
+
+        <title>고려아연 사이버구매 시스템</title>
+        <link  rel="stylesheet"  href="https://uicdn.toast.com/grid/latest/tui-grid.css" />
+        <link rel="stylesheet" href="https://uicdn.toast.com/select-box/latest/toastui-select-box.css">
+        <link rel="stylesheet" href="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.css" />
+        <link rel="stylesheet" href="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.css" />
+        <link rel="stylesheet" href="../css/reset.css" />
+        <link rel="stylesheet" href="../css/font.css" />
+        <link rel="stylesheet" href="../css/common.css" />
+        <link rel="stylesheet" href="../css/stylePurchaseInformation.css" />
+
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <link rel="stylesheet" href="../js/vendor/tui/datepicker/tui-date-picker.min.css" />
+        <link rel="stylesheet" href="../js/vendor/tui/timepicker/tui-time-picker.min.css">
+        <link rel="stylesheet" href="../js/vendor/tui/tui-grid.min.css">
+        <link rel="stylesheet" href="../js/vendor/tui/pagination/tui-pagination.min.css">
+        <link rel="stylesheet" href="../js/vendor/tui/selectbox/toastui-select-box.min.css">
+        <script type="text/javascript" src="../js/vendor/tui/timepicker/tui-time-picker.min.js"></script>
+        <script type="text/javascript" src="../js/vendor/tui/datepicker/tui-date-picker.min.js"></script>
+        <script type="text/javascript" src="../js/vendor/tui/pagination/tui-pagination.min.js"></script>
+        <script type="text/javascript" src="../js/vendor/tui/tui-grid.min.js"></script>
+        <script type="text/javascript" src="../js/vendor/tui/selectbox/toastui-select-box.min.js"></script>
+    </head>
+    <body>
+        <div class="containerPopup">
+            <div class="boxContents popupDetail">
+                <div class="popupHeader">
+                    <h4 class="popupTitle">구매공고 상세내역</h4>
+                    <p class="popupSubtitle">공고번호 : <span class="noticeNumber">12345</span></p>
+                    <div class="Buttons">
+                        <button class="print" onclick="window.print()">구매공고출력</button>
+                    </div>
+                </div>
+                <div class="containerViewTable">
+                    <dl>
+                        <dt>공고회사명</dt>
+                        <dd>고려아연</dd>
+                        <dd class="blank"></dd>
+                        <dt>구매공고명</dt>
+                        <dd>PAINT</dd>
+                        <dt>공고일자</dt>
+                        <dd>2022-01-06 오전 12:00</dd>
+                        <dd class="blank"></dd>
+                        <dt>공고마감일자</dt>
+                        <dd>2022-01-07 오전 12:00</dd>
+                        <dt>자재 대분류명</dt>
+                        <dd>영선자재</dd>
+                        <dd class="blank"></dd>
+                        <dt>납기일자</dt>
+                        <dd>2022-01-28 오전 12:00</dd>
+                        <dt>운송조건</dt>
+                        <dd>온산제련소 도착도</dd>
+                        <dd class="blank"></dd>
+                        <dt>지불조건</dt>
+                        <dd>입고 후 정기결재</dd>
+                        <dt>공고상태</dt>
+                        <dd>완료</dd>
+                        <dd class="blank"></dd>
+                        <dt>게시 담당자</dt>
+                        <dd>강정수</dd>
+                        <dt>첨부파일</dt>
+                        <dd class="longCell">고려아연_구매공고가이드.PDF</dd>
+                        <dt>비고</dt>
+                        <dd>담당자분과 유선으로 처리된 내용을 메일로 드렸습니다. 감사합니다!</dd>
+                      </dl>
+                </div>
+                <div class="containerGird">
+                    <div id="popupGird1"></div>
+                </div>
+                <div class="containerRegistration">
+                    <h5 class="popupSubtitle2">견적등록</h5>
+                    <div class="containerViewTable">
+                        <dl>
+                            <dt>견적차수</dt>
+                            <dd>1차</dd>
+                            <dd class="blank"></dd>
+                            <dt>총 견적금액</dt>
+                            <dd class="totalPrice">9,200,000</dd>
+                            <dt>희망 납기일</dt>
+                            <dd>2022-01-06 오전 12:00</dd>
+                            <dd class="blank"></dd>
+                            <dt>납기</dt>
+                            <dd>
+                                <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                                <input type="text" id="datepicker-input" aria-label="Date-Time">
+                                <span class="tui-ico-date"></span>
+                              </div>
+                              <div id="wrapper" style="margin-top: -1px;"></div>
+                            </dd>
+                            <dt>운송조건</dt>
+                            <dd><input type="text"></dd>
+                            <dd class="blank"></dd>
+                            <dt>지불조건</dt>
+                            <dd><input type="text"></dd>
+                            <dt>견적유효기간</dt>
+                            <dd><input type="text"></dd>
+                            <dd class="blank"></dd>
+                            <dt>담당자 전화번호</dt>
+                            <dd><input type="text"></dd>
+                            <dt>비고</dt>
+                            <dd>담당자분과 유선으로 처리된 내용을 메일로 드렸습니다. 감사합니다!</dd>
+                          </dl>
+                    </div>
+                    <div class="containerGird">
+                        <div id="popupGird2"></div>
+                    </div>
+                    <div class="attachFile">
+                        <label for="fileInput">견적서 첨부</label>
+                        <input id="fileInput" type="file">
+                        <button class="attachFileButton" onclick="onClickUpload();">파일찾기</button>
+                    </div>
+                </div>
+                <div class="containerButtons">
+                    <button class="buttonWhite">처음으로</button>
+                    <button class="buttonBlack" type="submit">견적서 제출</button>
+                </div>
+            </div>
+        </div>
+        <header class="header">
+            <div class="inner">
+                <h1 class="logo">
+                    <a href="main.html">KZ CYBER PURCHASE</a>
+                </h1>
+                <nav class="gnbHeader">
+                    <h2 class="hide">대메뉴</h2>
+                    <ul class="gnb">
+                        <li>
+                            <a href="/html/purchaseInformationNow.html" class="gnbSelected"
+                                >공개구매정보</a
+                            >
+                        </li>
+                        <li><a href="#" class="gnbunSelected">구매공고결과</a></li>
+                        <li><a href="#" class="gnbunSelected">나의구매정보</a></li>
+                        <li><a href="#" class="gnbunSelected">공지사항</a></li>
+                        <li><a href="#" class="gnbunSelected">고객지원</a></li>
+                    </ul>
+                    <div class="containerGnbButtons">
+                        <div class="buttonLogin">
+                            <a href="#"><button>로그인</button></a>
+                        </div>
+                        <div class="buttonJoin">
+                            <a href="../html/joinAgreement.html"><button>회원가입</button></a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="containerFloating">
+            <div class="loginBottomFloating">
+                <p class="loginInformation">
+                    <span class="loginUser">주식회사 남광토건</span>님 로그인 중 입니다
+                </p>
+                <p class="dataLabel">견적요망<span class="dataCount">2건</span></p>
+                <p class="dataLabel">신규공고<span class="dataCount">15건</span></p>
+                <button class="floatingButtonLogout" type="submit">로그아웃</button>
+            </div>
+        </div>
+        <div class="containerContents">
+            <h3 class="pageTitle">공개구매정보</h3>
+            <p class="pageDescription">낙찰된 공고의 발주서는 “나의구매정보” 혹은 “구매공고결과” 에서 확인하실 수 있습니다.</p>
+            <div class="pageTab">
+                <ul>
+                    <li class="tabSelected"><a href="/html/purchaseInformationNow.html">진행중 공고</a></li>
+                    <li class="tabUnselected"><a href="/html/purchaseInformationEnd.html">마감된 공고</a></li>
+                </ul>
+            </div>
+            <div class="containerSearchArea">
+                <div class="tui_selectbox">
+                    <span>공고사</span>
+                    <div id="select-box1" style="width: 200px; height: 36px;"></div>
+                </div>
+                <div class="tui_selectbox">
+                    <span>공고상태</span>
+                    <div id="select-box2" style="width: 200px; height: 36px;"></div>
+                </div>
+                <div class="tui_selectbox">
+                    <span>대분류</span>
+                    <div id="select-box3" style="width: 200px; height: 36px;"></div>
+                </div>
+                <div class="tui_selectbox">
+                    <span>상세검색</span>
+                    <div id="select-box4" style="width: 200px; height: 36px;"></div>
+                </div>
+                <div class="tui_datepicker">
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" id="datepicker-input1" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </div>
+                    <div id="date-picker-wrapper1" style="margin-top: -1px;"></div>
+                </div>
+                <div class="tui_datepicker">
+                    <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+                        <input type="text" id="datepicker-input2" aria-label="Date-Time">
+                        <span class="tui-ico-date"></span>
+                    </div>
+                    <div id="date-picker-wrapper2" style="margin-top: -1px;"></div>
+                </div>
+                <button type="submit" class="searchAreaButton">검색</button>
+            </div>
+            <div class="containerTable">
+                <div id="select-box"></div>
+                <div id="purchase"></div>
+                <div id="pagination1" class="tui-pagination"></div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="containerBranch">
+                <div class="boxBranch">
+                    <p class="branchTitle">본사</p>
+                    <p class="branchAddress">주소 : 서울특별시 강남구 강남대로 542 영풍빌딩</p>
+                    <p class="branchTel">연락처 : 02-519-3416</p>
+                    <p class="branchFax">팩스 : 02-519-9987</p>
+                </div>
+                <div class="boxBranch">
+                    <p class="branchTitle">온산</p>
+                    <p class="branchAddress">주소 : 서울특별시 강남구 강남대로 542 영풍빌딩</p>
+                    <p class="branchTel">연락처 : 02-519-3416</p>
+                    <p class="branchFax">팩스 : 02-519-9987</p>
+                </div>
+            </div>
+            <p class="branchCopyright">COPYRIGHT 2022 KOREAZINC. ALL RIGHTS RESERVED.</p>
+        </footer>
+    </body>
+</html>
+<script>
+    //date picker
+    var datepicker1 = new tui.DatePicker('#date-picker-wrapper1', {
+        date: new Date(),
+        input: {
+            element: '#datepicker-input1',
+            format: 'yyyy-MM-dd'
+        }
+    });
+    var datepicker2 = new tui.DatePicker('#date-picker-wrapper2', {
+        date: new Date(),
+        input: {
+            element: '#datepicker-input2',
+            format: 'yyyy-MM-dd'
+        }
+    });
+
+    //grid
+    $(document).ready(function () {
+        const grid = new tui.Grid({
+            el: document.getElementById('purchase'),
+            columns: [
+                { header: 'No', name: 'number', width: '90' },
+                { header: '공고사', name: 'company', width: '206'},
+                { header: '구매공고명', name: 'name', width: '380' },
+                { header: '대분류', name: 'category', width: '197' },
+                { header: '공고시작일', name: 'startdate', sortingType: 'desc', sortable: true },
+                { header: '공고마감일', name: 'enddate', sortingType: 'desc', sortable: true },
+                { header: '공고상태', name: 'status' },
+            ],
+            data: [
+            {
+                number: '2132',
+                company: '주식회사 모디라',
+                name: '페인트',
+                category: '강관 및 부속',
+                startdate: '2022.04.07',
+                enddate: '2022.06.05',
+                status: '게시',
+            },
+            {
+                number: '2132',
+                company: '주식회사 모디라',
+                name: '페인트',
+                category: '영선자재',
+                startdate: '2022.04.07',
+                enddate: '2022.06.06',
+                status: '게시',
+            },
+            {
+                number: '2132',
+                company: '주식회사 모디라',
+                name: '페인트',
+                category: '철강재',
+                startdate: '2022.04.07',
+                enddate: '2022.06.07',
+                status: '게시',
+            },
+            {
+                number: '2132',
+                company: '주식회사 모디라',
+                name: '페인트',
+                category: '수지 및 제품',
+                startdate: '2022.04.07',
+                enddate: '2022.06.07',
+                status: '게시',
+            },
+            {
+                number: '2132',
+                company: '주식회사 모디라',
+                name: '페인트',
+                category: '소모공구류',
+                startdate: '2022.04.07',
+                enddate: '2022.06.07',
+                status: '게시',
+            },
+            {
+                number: '2132',
+                company: '주식회사 모디라',
+                name: '페인트',
+                category: '영선자재',
+                startdate: '2022.04.07',
+                enddate: '2022.06.07',
+                status: '게시',
+            },
+            {
+                number: '2132',
+                company: '주식회사 모디라',
+                name: '페인트',
+                category: '소모공구류',
+                startdate: '2022.04.07',
+                enddate: '2022.06.07',
+                status: '게시',
+            },
+            {
+                number: '2132',
+                company: '주식회사 모디라',
+                name: '페인트',
+                category: '강관 및 부속',
+                startdate: '2022.04.07',
+                enddate: '2022.06.07',
+                status: '게시',
+            },
+            {
+                number: '2132',
+                company: '주식회사 모디라',
+                name: '페인트',
+                category: '영선자재',
+                startdate: '2022.04.07',
+                enddate: '2022.06.07',
+                status: '게시',
+            },
+            {
+                number: '2132',
+                company: '주식회사 모디라',
+                name: '페인트',
+                category: '철강재',
+                startdate: '2022.04.07',
+                enddate: '2022.06.07',
+                status: '게시',
+            },
+            ],
+        });
+    });
+    //Upload
+    function onClickUpload() {
+            let myInput = document.getElementById("fileInput");
+            myInput.click();
+        }
+
+    //pagination
+    var pagination1 = new tui.Pagination('pagination1', {
+        totalItems: 500,
+        itemsPerPage: 10,
+        visiblePages: 5
+    });
+    
+    //select box
+    var selectBox = new tui.SelectBox('#select-box1', {
+        data: [
+          { label: '전체', value: '전체' }, { label: '고려아연', value: '고려아연' }
+        ],
+        showIcon: false,
+        theme: {
+          'common.border': '1px solid #ededed',
+          'common.color': '#353535',
+          'common.background': '#ffffff',
+          'common.width': '200px',
+          'common.height': '34px',
+
+          'common.disabled.background': '#f1f1f1',
+          'common.disabled.color': '#d8d8d8',
+
+          'dropdown.maxHeight': '300px',
+
+          'itemGroup.items.paddingLeft': '15px',
+
+          'itemGroup.label.color': 'black',
+
+          'item.selected.background': '#b3ca9a',
+          'item.selected.color': 'white',
+
+          'item.highlighted.background': '#fbf3c1'
+        }
+      });
+      var selectBox = new tui.SelectBox('#select-box2', {
+        data: [
+          { label: '게시', value: '게시' }, { label: '미게시', value: '미게시' }
+        ],
+        showIcon: false,
+        theme: {
+          'common.border': '1px solid #ededed',
+          'common.color': '#353535',
+          'common.background': '#ffffff',
+          'common.width': '200px',
+          'common.height': '34px',
+
+          'common.disabled.background': '#f1f1f1',
+          'common.disabled.color': '#d8d8d8',
+
+          'dropdown.maxHeight': '300px',
+
+          'itemGroup.items.paddingLeft': '15px',
+
+          'itemGroup.label.color': 'black',
+
+          'item.selected.background': '#b3ca9a',
+          'item.selected.color': 'white',
+
+          'item.highlighted.background': '#fbf3c1'
+        }
+      });
+      var selectBox = new tui.SelectBox('#select-box3', {
+        data: [
+          { label: '전체', value: '전체' }, 
+          { label: '대분류', value: '대분류' }, 
+          { label: '연료 및 유류', value: '연료 및 유류' }, 
+          { label: '영선자재', value: '영선자재' }, 
+          { label: '철강재', value: '철강재' }, 
+          { label: '강관 및 부속', value: '강관 및 부속' }, 
+          { label: '화공약품', value: '화공약품' }, 
+          { label: '섬유지류', value: '섬유지류' }, 
+          { label: '고무피혁', value: '고무피혁' }, 
+          { label: '수지 및 제품', value: '수지 및 제품' }, 
+          { label: '전기류', value: '전기류' }, 
+          { label: '소모공구류', value: '소모공구류' }, 
+          { label: '차량 및 부속', value: '차량 및 부속' }, 
+          { label: '기계기구', value: '기계기구' }, 
+          { label: '기계부속', value: '기계부속' }, 
+          { label: '부원료', value: '부원료' }, 
+          { label: '비철금속', value: '비철금속' }, 
+          { label: '소모공구류(안전과)', value: '소모공구류(안전과)' }, 
+          { label: '화공약품(연구소)', value: '화공약품(연구소)' }, 
+          { label: '소모공구류(연구소)', value: '소모공구류(연구소)' }, 
+          { label: '전력저감율 30%성능 전해제련장치 국산화 (기술연구소)', value: '전력저감율 30%성능 전해제련장치 국산화 (기술연구소)' }, 
+          { label: '철폼공장 원재료', value: '철폼공장 원재료' }, 
+          { label: '펌프류', value: '펌프류' }, 
+          { label: '밸브류', value: '밸브류' }, 
+          { label: 'SMC / BRZ', value: 'SMC / BRZ' }, 
+          { label: 'SMC', value: 'SMC' }, 
+          { label: '아연정광', value: '아연정광' }, 
+          { label: '연정광', value: '연정광' }, 
+          { label: '동정광', value: '동정광' }, 
+          { label: '기타원료', value: '기타원료' }, 
+          { label: '은정광', value: '은정광' }, 
+          { label: '아연괴류', value: '아연괴류' }, 
+          { label: '연괴류', value: '연괴류' }, 
+          { label: '귀금속류', value: '귀금속류' }, 
+          { label: '황산류', value: '황산류' }, 
+          { label: '인듐류', value: '인듐류' }, 
+          { label: '전기동류', value: '전기동류' }, 
+          { label: '전자황산류', value: '전자황산류' }, 
+          { label: '황화아연류', value: '황화아연류' }, 
+          { label: '부산물', value: '부산물' },
+          { label: '갈륨류', value: '갈륨류' }, 
+          { label: '기타제품류', value: '기타제품류' }, 
+          { label: '재공품', value: '재공품' }, 
+          { label: '반제품', value: '반제품' }, 
+          { label: '철폼류', value: '철폼류' }, 
+          { label: '기타(회계)품', value: '기타(회계)품' }, 
+          { label: 'Skirts', value: 'Skirts' },
+        ],
+        showIcon: false,
+        theme: {
+          'common.border': '1px solid #ededed',
+          'common.color': '#353535',
+          'common.background': '#ffffff',
+          'common.width': '200px',
+          'common.height': '34px',
+
+          'common.disabled.background': '#f1f1f1',
+          'common.disabled.color': '#d8d8d8',
+
+          'dropdown.maxHeight': '300px',
+
+          'itemGroup.items.paddingLeft': '15px',
+
+          'itemGroup.label.color': 'black',
+
+          'item.selected.background': '#b3ca9a',
+          'item.selected.color': 'white',
+
+          'item.highlighted.background': '#fbf3c1'
+        }
+      });
+      var selectBox = new tui.SelectBox('#select-box4', {
+        data: [
+          { label: '공고일', value: '공고일' }, { label: '공고마감일', value: '공고마감일' }
+        ],
+        showIcon: false,
+        theme: {
+          'common.border': '1px solid #ededed',
+          'common.color': '#353535',
+          'common.background': '#ffffff',
+          'common.width': '200px',
+          'common.height': '34px',
+
+          'common.disabled.background': '#f1f1f1',
+          'common.disabled.color': '#d8d8d8',
+
+          'dropdown.maxHeight': '300px',
+
+          'itemGroup.items.paddingLeft': '15px',
+
+          'itemGroup.label.color': 'black',
+
+          'item.selected.background': '#b3ca9a',
+          'item.selected.color': 'white',
+
+          'item.highlighted.background': '#fbf3c1'
+        }
+      });
+
+      var selectBox = new tui.SelectBox('#select-box', {
+        data: [
+          { label: '10개씩 보기', value: '10개씩 보기' }, { label: '20개씩보기', value: '20개씩 보기' }, { label: '50개씩 보기', value: '50개씩 보기' }, { label: '100개씩 보기', value: '100개씩 보기' } 
+        ],
+        showIcon: false,
+        theme: {
+          'common.border': '1px solid #ededed',
+          'common.color': '#353535',
+          'common.background': '#ffffff',
+          'common.width': '96px',
+          'common.height': '26px',
+
+          'common.disabled.background': '#f1f1f1',
+          'common.disabled.color': '#d8d8d8',
+
+          'dropdown.maxHeight': '300px',
+
+          'itemGroup.items.paddingLeft': '15px',
+
+          'itemGroup.label.color': 'black',
+
+          'item.selected.background': '#b3ca9a',
+          'item.selected.color': 'white',
+
+          'item.highlighted.background': '#fbf3c1'
+        }
+      });
+
+
+
+      //popup grid
+        const grid1 = new tui.Grid({
+            el: document.getElementById('popupGird1'),
+            columns: [
+                { header: 'No', name: 'number', width: '51' },
+                { header: '자재코드', name: 'code'},
+                { header: '품명', name: 'name' },
+                { header: '규격', name: 'standard' },
+                { header: '단위', name: 'unit', width: '62' },
+                { header: '수량', name: 'quantity', width: '58' },
+                { header: '의뢰자', name: 'requester' },
+            ],
+            data: [
+            {
+                number: '1',
+                code: '02-058-18-0080',
+                name: 'PAINT',
+                standard: '에나멜 KSM6020 2종2급 E49582 (청회색)4L / 하이멜 E-49582 청회색 4L',
+                unit: 'CN',
+                quantity: '20',
+                requester: '제련1팀 / 장종태',
+            },
+            {
+                number: '2',
+                code: '02-058-18-0080',
+                name: 'PAINT',
+                standard: '에나멜 KSM6020 2종2급 E49582 (청회색)4L / 하이멜 E-49582 청회색 4L',
+                unit: 'CN',
+                quantity: '20',
+                requester: '제련1팀 / 장종태',
+            },
+            {
+                number: '3',
+                code: '02-058-18-0080',
+                name: 'PAINT',
+                standard: '에나멜 KSM6020 2종2급 E49582 (청회색)4L / 하이멜 E-49582 청회색 4L',
+                unit: 'CN',
+                quantity: '20',
+                requester: '제련1팀 / 장종태',
+            }
+            ],
+        });
+        
+        const gridData = [
+        {
+                name: 'PAINT',
+                standard: '에나멜 KSM6020 2종2급 E49582 (청회색)4L / 하이멜 E-49582 청회색 4L',
+                unit: 'CN',
+                quantity: '20',
+                unitPrice: '2,800,000',
+                price: '3,200,000',
+            },
+            {
+                name: 'PAINT',
+                standard: '에나멜 KSM6020 2종2급 E49582 (청회색)4L / 하이멜 E-49582 청회색 4L',
+                unit: 'CN',
+                quantity: '20',
+                unitPrice: '1,600,000',
+                price: '3,200,000',
+            },
+            {
+                name: 'PAINT',
+                standard: '에나멜 KSM6020 2종2급 E49582 (청회색)4L / 하이멜 E-49582 청회색 4L',
+                unit: 'CN',
+                quantity: '20',
+                unitPrice: '4,400,000',
+                price: '3,200,000',
+            }
+        ];
+        (function() {
+        })();
+
+        const grid2 = new tui.Grid({
+        el: document.getElementById('popupGird2'),
+        data: gridData,
+        scrollX: false,
+        bodyHeight: 180,
+        rowHeaders: ['rowNum'],
+        columns: [
+            { header: '품명', name: 'name' },
+            { header: '규격', name: 'standard' },
+            { header: '단위', name: 'unit', width: '62' },
+            { header: '수량', name: 'quantity', width: '58', editor: 'text' },
+            { header: '단가', name: 'unitPrice' , editor: 'text' },
+            { header: '금액', name: 'price' }
+        ],
+        summary: {
+            height: 49,
+            position: 'bottom',
+            columnContent: {
+            price: {
+                template: function(valueMap) {
+                return `<b style="font-weight:700;">총 견적금액: <span style="color:#1672E4; margin-left: 20px;">${valueMap.sum}</span></b>`;
+                }
+            }
+            }
+        }
+        });
+
+     //popup date picker
+     var datepicker3 = new tui.DatePicker('#wrapper', {
+        date: new Date(),
+        input: {
+          element: '#datepicker-input',
+          format: 'yyyy-MM-dd HH:mm A'
+        },
+        timePicker: true
+      });
+</script>

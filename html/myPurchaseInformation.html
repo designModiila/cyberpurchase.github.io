@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width"
+        />
+        <meta name="format-detection" content="telephone=no, address=no, email=no" />
+
+        <meta name="title" content="KZ CYBER PURCHASE" />
+        <meta name="description" content="고려아연에서 운영하는 구매입찰견적서비스입니다." />
+        <meta name="keywords" content="고려아연, 입찰, 구매, 견적, 서비스" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="" />
+
+        <meta property="og:title" content="KZ CYBER PURCHASE" />
+        <meta property="og:description" content="고려아연에서 운영하는 구매입찰견적서비스입니다." />
+        <meta property="og:image" content="../img/main_logo_color.png" />
+
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+        <meta http-equiv="Pragma" content="no-cache">
+        <base href="../html/main.html">
+
+        <title>고려아연 사이버구매 시스템</title>
+        <link  rel="stylesheet"  href="https://uicdn.toast.com/grid/latest/tui-grid.css" />
+        <link rel="stylesheet" href="https://uicdn.toast.com/select-box/latest/toastui-select-box.css">
+        <link rel="stylesheet" href="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.css" />
+        <link rel="stylesheet" href="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.css" />
+        <link rel="stylesheet" href="../css/reset.css" />
+        <link rel="stylesheet" href="../css/font.css" />
+        <link rel="stylesheet" href="../css/common.css" />
+        <link rel="stylesheet" href="../css/stylePurchaseInformation.css" />
+
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <link rel="stylesheet" href="../js/vendor/tui/datepicker/tui-date-picker.min.css" />
+        <link rel="stylesheet" href="../js/vendor/tui/timepicker/tui-time-picker.min.css">
+        <link rel="stylesheet" href="../js/vendor/tui/tui-grid.min.css">
+        <link rel="stylesheet" href="../js/vendor/tui/pagination/tui-pagination.min.css">
+        <link rel="stylesheet" href="../js/vendor/tui/selectbox/toastui-select-box.min.css">
+        <script type="text/javascript" src="../js/vendor/tui/timepicker/tui-time-picker.min.js"></script>
+        <script type="text/javascript" src="../js/vendor/tui/datepicker/tui-date-picker.min.js"></script>
+        <script type="text/javascript" src="../js/vendor/tui/pagination/tui-pagination.min.js"></script>
+        <script type="text/javascript" src="../js/vendor/tui/tui-grid.min.js"></script>
+        <script type="text/javascript" src="../js/vendor/tui/selectbox/toastui-select-box.min.js"></script>
+    </head>
+    <body>
+        <div class="containerPopup">
+            <div class="boxContents popupDetail">
+                <div class="containerUnPrint">
+                    <div class="popupHeader">
+                        <h1 class="popupTitle">발주공고 </h1>
+                        <p class="popupSubtitle">발주공고번호 : <span class="noticeNumber">252104-OP (177359)</span></p>
+                        <div class="Buttons">
+                            <button class="confirm">발주확인</button>
+                            <button class="print" onclick="window.print()">발주서출력</button>
+                        </div>
+                    </div>
+                    <div class="containerViewTable tableFirst">
+                        <dl>
+                            <dt>구매 PO번호</dt>
+                            <dd>250382-OP</dd>
+                            <dd class="blank"></dd>
+                            <dt>구매공고명</dt>
+                            <dd>PAINT</dd>
+                            <dt>공고일자</dt>
+                            <dd>2022-01-06 오전 12:00</dd>
+                            <dd class="blank"></dd>
+                            <dt>공고마감일자</dt>
+                            <dd>2022-01-07 오전 12:00</dd>
+                            <dt>공고구분</dt>
+                            <dd>일반구매</dd>
+                            <dd class="blank"></dd>
+                            <dt>납기일자</dt>
+                            <dd>2022-01-28 오전 12:00</dd>
+                            <dt>운송조건</dt>
+                            <dd>온산제련소 도착도</dd>
+                            <dd class="blank"></dd>
+                            <dt>지불조건</dt>
+                            <dd>입고 후 정기결재</dd>
+                            <dt>발주 담당자</dt>
+                            <dd>강정수</dd>
+                            <dd class="blank"></dd>
+                            <dt>담당 전화번호</dt>
+                            <dd>010-4942-5954</dd>
+                        </dl>
+                    </div>
+                    <div class="containerViewTable tableSecond">
+                        <dl>
+                            <dt>낙찰(납품)업체</dt>
+                            <dd>삼화페인트 공업</dd>
+                            <dd class="blank"></dd>
+                            <dt>낙찰가격</dt>
+                            <dd>3,445,200</dd>
+                            <dt>주소</dt>
+                            <dd>경기도 안산시 단원구 성곡동 677</dd>
+                            <dd class="blank"></dd>
+                            <dt>공급가액</dt>
+                            <dd>3,132,000</dd>
+                            <dt></dt>
+                            <dd></dd>
+                            <dd class="blank"></dd>
+                            <dt>부가세</dt>
+                            <dd>313,200</dd>
+                        </dl>
+                    </div>
+                    <div class="containerGird borderbottom">
+                        <div id="popupGird1" class="gridView"></div>
+                    </div>
+                </div>
+                <div class="containerPrint">
+                    <h2 class="titlePrint">발주서</h2>
+                    <div class="informationCompany">
+                        <span class="nameCompany">KOREA ZINC CO., LTD</span>
+                        <span class="addressCompany">142, NONHUTN-DONG GANGNAM-KU, SEOUL, KOREA</span>
+                        <span class="faxCompany">FAX : (02)514-5039</span>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="containerViewTable">
+                        <dl>
+                            <dt>구매 PO번호</dt>
+                            <dd>250382-OP</dd>
+                            <dt>납기일</dt>
+                            <dd>2022-01-28</dd>
+                            <dt>공급가액</dt>
+                            <dd>775,000</dd>
+                            <dt>발주일</dt>
+                            <dd>2022-01-06</dd>
+                            <dt>운송조건</dt>
+                            <dd>온산제련소 도착도</dd>
+                            <dt>부가세</dt>
+                            <dd>77,500</dd>
+                            <dt>공급처</dt>
+                            <dd>삼화페인트공업(주)</dd>
+                            <dt>대금지급조건</dt>
+                            <dd>입고 후 정기결재</dd>
+                            <dt>합계</dt>
+                            <dd>862,500</dd>
+                            <dt>구매담당자</dt>
+                            <dd>강정수</dd>
+                            <dt>주소</dt>
+                            <dd>경기도 안산시 단원구 성곡동 677</dd>
+                        </dl>
+                    </div>
+                    <div class="containerGird">
+                        <div id="popupGird2"></div>
+                    </div>
+                    <div class="compliance">
+                        <p class="title">준수사항</p>
+                        <p class="description">납품 시 발주서 사본 및 거래명세표를 자재창고에 제출할 것</p>
+                    </div>
+                    <div class="containerButtons">
+                        <button class="buttonWhite">목록으로</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+<script>
+    // popup grid
+    const grid1 = new tui.Grid({
+        el: document.getElementById('popupGird1'),
+        columns: [
+            { header: 'No', name: 'number', width: '51' },
+            { header: '자재코드', name: 'code'},
+            { header: '품명', name: 'name' },
+            { header: '규격', name: 'standard' },
+            { header: '단위', name: 'unit', width: '62' },
+            { header: '수량', name: 'quantity', width: '58' },
+            { header: '의뢰자', name: 'requester', width: '195' },
+        ],
+        data: [
+        {
+            number: '1',
+            code: '02-058-18-0080',
+            name: 'PAINT',
+            standard: '에나멜 KSM6020 2종2급 E49582 (청회색)4L / 하이멜 E-49582 청회색 4L',
+            unit: 'CN',
+            quantity: '20',
+            requester: '제련1팀 / 장종태',
+        },
+        {
+            number: '2',
+            code: '02-058-18-0080',
+            name: 'PAINT',
+            standard: '에나멜 KSM6020 2종2급 E49582 (청회색)4L / 하이멜 E-49582 청회색 4L',
+            unit: 'CN',
+            quantity: '20',
+            requester: '제련1팀 / 장종태',
+        },
+        {
+            number: '3',
+            code: '02-058-18-0080',
+            name: 'PAINT',
+            standard: '에나멜 KSM6020 2종2급 E49582 (청회색)4L / 하이멜 E-49582 청회색 4L',
+            unit: 'CN',
+            quantity: '20',
+            requester: '제련1팀 / 장종태',
+        }
+        ],
+    });
+
+    const grid2 = new tui.Grid({
+            el: document.getElementById('popupGird2'),
+            columns: [
+                { header: 'No', name: 'col1' },
+                { header: '구매의뢰번호', name: 'col3' },
+                { header: '공사번호', name: 'col5'},
+                { header: '규격 및 재질', name: 'col6' },
+                { header: '단위', name: 'col7' },
+                { header: '오더수량', name: 'col10' },
+                { header: '의뢰부서', name: 'col12' },
+                { header: '의뢰자', name: 'col14'}
+            ],
+            
+            header: {
+            height: 80,
+                complexColumns: [
+                {
+                    header: '자재코드',
+                    name: 'col2', 
+                    childNames: ['col3']            
+                },
+                {
+                    header: '품명',
+                    name: 'col4', 
+                    childNames: ['col5']            
+                },
+                {
+                    header: '공사명',
+                    name: 'col8',
+                    childNames: ['col6', 'col7']            
+                },
+                {
+                    header: '수량',
+                    name: 'col9', 
+                    childNames: ['col10']            
+                },
+                {
+                    header: '단가',
+                    name: 'col11', 
+                    childNames: ['col12']            
+                },
+                {
+                    header: '금액',
+                    name: 'col13', 
+                    childNames: ['col14']            
+                }
+                ]
+            }
+        });
+</script>
