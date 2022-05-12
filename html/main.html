@@ -1,73 +1,421 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta http-equiv="Content-Script-Type" content="text/javascript" />
-		<meta http-equiv="Content-Style-Type" content="text/css" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-	    <meta charset="utf-8" />
-		<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
-		<meta name="format-detection" content="telephone=no, address=no, email=no">
+        <meta charset="utf-8" />
+        <meta  name="viewport"  content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width"/>
+        <meta  name="format-detection"  content="telephone=no, address=no, email=no"/>
 
-		<meta name="title" content="KZ CYBER PURCHASE">
-		<meta name="description" content="고려아연에서 운영하는 구매입찰견적서비스입니다.">
-		<meta name="keywords" content="고려아연, 입찰, 구매, 견적, 서비스">
-		<meta property="og:type" content="website">
-	    <meta property="og:url"	content=""/>
+        <meta name="title" content="KZ CYBER PURCHASE" />
+        <meta  name="description"  content="고려아연에서 운영하는 구매입찰견적서비스입니다."/>
+        <meta name="keywords" content="고려아연, 입찰, 구매, 견적, 서비스" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="" />
 
-		<meta property="og:title" content="KZ CYBER PURCHASE">
-		<meta property="og:description" content="고려아연에서 운영하는 구매입찰견적서비스입니다.">
-		<meta property="og:image" content="../img/main_logo_color.png">
+        <meta property="og:title" content="KZ CYBER PURCHASE" />
+        <meta  property="og:description"  content="고려아연에서 운영하는 구매입찰견적서비스입니다." />
+        <meta property="og:image" content="../img/main_logo_color.png" />
 
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+        <meta http-equiv="Pragma" content="no-cache">
+        <base href="../html/main.html">
 
-    <title>고려아연 사이버구매 시스템</title>
-    <link rel="stylesheet" href="../css/reset.css" />
-    <link rel="stylesheet" href="../css/font.css" />
-    <link rel="stylesheet" href="../css/common.css" />
-    <link rel="stylesheet" href="../css/styleJoin.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  </head>
-  <body>
-    <header class="header">
-        <div class="inner">
-        <h1 class="logo">
-          <a href="main.html">KZ CYBER PURCHASE</a>
-        </h1>
-        <nav class="gnbHeader">
-          <h2 class="hide">대메뉴</h2>
-          <ul class="gnb">
-            <li><a href="../html/purchaseInformationSearch.html" class="gnbunSelected">공개구매정보</a></li>
-            <li><a href="#" class="gnbunSelected">구매공고결과</a></li>
-            <li><a href="#" class="gnbunSelected">나의구매정보</a></li>
-            <li><a href="#" class="gnbunSelected">공지사항</a></li>
-            <li><a href="#" class="gnbunSelected">고객지원</a></li>
-          </ul>
-          <div class="containerGnbButtons">
-            <div class="buttonLogin"><a href="#"><button>로그인</button></a></div>
-          <div class="buttonJoin"><a href="../html/joinAgreement.html"><button>회원가입</button></a></div>
-          </div>
-        </nav>
-        <div class="clear"></div>
+        <title>고려아연 사이버구매 시스템</title>
+        <!-- <link  rel="stylesheet"  href="https://uicdn.toast.com/grid/latest/tui-grid.css" /> -->
+        <link rel="stylesheet" href="../css/reset.css" />
+        <link rel="stylesheet" href="../css/font.css" />
+        <link rel="stylesheet" href="../css/common.css" />
+        <link rel="stylesheet" href="../css/main.css" />
+
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <link rel="stylesheet" href="../js/vendor/tui/tui-grid.min.css">
+        <script type="text/javascript" src="../js/vendor/tui/tui-grid.min.js"></script>
+    </head>
+
+    <body>
+        <header class="mainHeader">
+            <div class="inner">
+                <h1 class="logo">
+                    <a href="main.html">KZ CYBER PURCHASE</a>
+                </h1>
+                <nav class="gnbHeader">
+                    <h2 class="hide">대메뉴</h2>
+                    <ul class="gnb">
+                        <li>
+                            <a
+                                href="../html/purchaseInformationNow.html"
+                                class="gnbunSelected"
+                                >공개구매정보</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#" class="gnbunSelected">구매공고결과</a>
+                        </li>
+                        <li>
+                            <a href="#" class="gnbunSelected">나의구매정보</a>
+                        </li>
+                        <li><a href="#" class="gnbunSelected">공지사항</a></li>
+                        <li><a href="#" class="gnbunSelected">고객지원</a></li>
+                    </ul>
+                    <div class="containerGnbButtons">
+                        <div class="buttonLogin">
+                            <a href="#"><button>로그인</button></a>
+                        </div>
+                        <div class="buttonJoin">
+                            <a href="../html/joinAgreement.html"
+                                ><button>회원가입</button></a
+                            >
+                        </div>
+                    </div>
+                </nav>
+                <div class="clear"></div>
+            </div>
+        </header>
+        <div class="containerContentsMain">
+            <!-- Carousel -->
+        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            </div>
+        
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../img/img_carousel01.jpg" alt="메인 이미지" class="d-block w-100">
+                <div class="carousel-caption">
+                    <h3>KOREAZINC<br>CYBER PURCHASE</h3>
+                    <p>고려아연 주식회사 사이버구매 시스템입니다</p>
+                  </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../img/img_carousel01.jpg" alt="메인 이미지" class="d-block w-100">
+                <div class="carousel-caption">
+                    <h3>KOREAZINC<br>CYBER PURCHASE</h3>
+                    <p>고려아연 주식회사 사이버구매 시스템입니다</p>
+                  </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../img/img_carousel01.jpg" alt="메인 이미지" class="d-block w-100">
+                <div class="carousel-caption">
+                    <h3>KOREAZINC<br>CYBER PURCHASE</h3>
+                    <p>고려아연 주식회사 사이버구매 시스템입니다</p>
+                  </div>
+            </div>
+            </div>
+        
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            </button>
         </div>
-    </header>
-    <div class="containerContents">
-    </div>
-    <footer class="footer">
-      <div class="containerBranch">
-          <div class="boxBranch">
-              <p class="branchTitle">본사</p>
-              <p class="branchAddress">주소 : 서울특별시 강남구 강남대로 542 영풍빌딩</p>
-              <p class="branchTel">연락처 : 02-519-3416</p>
-              <p class="branchFax">팩스 : 02-519-9987</p>
+            <div class="containerLogout">
+                <div class="boxLogin">
+                    <input class="loginInput" type="text" placeholder="아이디를 입력해 주세요"/>
+                    <input class="loginInput" type="text" placeholder="비밀번호를 입력해 주세요">
+                    <button class="buttonLogin">로그인</button>
+                    <div class="boxTextLink">
+                        <a href="#" class="textLink">ID/비밀번호 찾기</a>
+                        <a href="#" class="textLink">회원가입</a>
+                    </div>
+                </div>
+                <div class="containerNotice">
+                    <p class="containerTitle">공지사항</p>
+                    <a class="more">더보기</a>
+                    <div class="clear"></div>
+                    <div class="tableNotice">
+                        <table>
+                            <thead>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td data-column="tableNumber">42</td>
+                                <td data-column="tableName">공개구매공고 입찰 가이드</td>
+                                <td data-column="tableDate">2022.04.12</td>
+                                <td data-column="tableWriter">고려아연 관리자</td>
+                              </tr>
+                              <tr>
+                                <td data-column="tableNumber">42</td>
+                                <td data-column="tableName">공개구매공고 입찰 가이드</td>
+                                <td data-column="tableDate">2022.04.12</td>
+                                <td data-column="tableWriter">고려아연 관리자</td>
+                              </tr>
+                              <tr>
+                                <td data-column="tableNumber">42</td>
+                                <td data-column="tableName">공개구매공고 입찰 가이드</td>
+                                <td data-column="tableDate">2022.04.12</td>
+                                <td data-column="tableWriter">고려아연 관리자</td>
+                              </tr>
+                              <tr>
+                                <td data-column="tableNumber">42</td>
+                                <td data-column="tableName">공개구매공고 입찰 가이드</td>
+                                <td data-column="tableDate">2022.04.12</td>
+                                <td data-column="tableWriter">고려아연 관리자</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                </div>
             </div>
-            <div class="boxBranch">
-              <p class="branchTitle">온산</p>
-              <p class="branchAddress">주소 : 서울특별시 강남구 강남대로 542 영풍빌딩</p>
-              <p class="branchTel">연락처 : 02-519-3416</p>
-              <p class="branchFax">팩스 : 02-519-9987</p>
+            <div class="containerLogin">
+                <div class="loginInfo">
+                    <p class="loginInformation"><span class="loginUser">주식회사 남광토건</span>님 로그인 중 입니다</p>
+                    <p class="dataLabel">견적요망<span class="dataCount">2건</span></p>
+                    <p class="dataLabel">신규공고<span class="dataCount">15건</span></p>
+                    <a href="#" class="floatingButtonLogout" type="submit">로그아웃</a>
+                </div>
+                <div class="containerGrid">
+                    <p class="containerTitle">신규 공개구매공고</p>
+                    <a class="more">더보기</a>
+                    <div class="clear"></div>
+                    <div id="grid"></div>
+                </div>
             </div>
-      </div>
-    <p class="branchCopyright">COPYRIGHT 2022 KOREAZINC. ALL RIGHTS RESERVED.</p>
-  </footer>
-  </body>
+            <div class="containerHowToBid">
+                <div class="containerInner">
+                    <h3 class="sectionTitle">HOW TO BID</h3>
+                    <p class="sectionDescription">
+                        고려아연 사이버구매 입찰 및 견적 절차 안내
+                    </p>
+                    <div id="container_tab">
+                        <div class="howtoTab">
+                          <ul>
+                            <li class="active"><a href="#bid">입찰방법 안내</a></li>
+                            <li><a href="#estimate">견적방법 안내</a></li>
+                          </ul>
+                        </div>   
+                        <section class="tabsContent">
+                            <div class="innerHowToBid" id="bid">
+                                <div class="boxProcess designCard">
+                                    <p class="processTitle">업체등록</p>
+                                    <p class="processText">
+                                        가입심사 후 승인 결과를 안내해 드립니다.
+                                    </p>
+                                </div>
+                                <div class="boxProcess designCard">
+                                    <p class="processTitle">구매열람</p>
+                                    <p class="processText">
+                                        진행중인 공개/단가 계약 공고를 확인합니다.
+                                    </p>
+                                </div>
+                                <div class="boxProcess designCard">
+                                    <p class="processTitle">견적작성</p>
+                                    <p class="processText">
+                                        해당 공고의 희망 견적 금액을 입력해 주세요.
+                                    </p>
+                                </div>
+                                <div class="boxProcess designCard">
+                                    <p class="processTitle">발주확인</p>
+                                    <p class="processText">
+                                        E-mail 및 발주공고를 통해 구매 결과를 안내해 드립니다.
+                                    </p>
+                                </div>
+                                <div class="boxProcess designCard">
+                                    <p class="processTitle">납품</p>
+                                    <p class="processText">
+                                        물품이 입고되면 입고 확인 및 검수를 진행합니다.
+                                    </p>
+                                </div>
+                                <div class="boxProcess designCard">
+                                    <p class="processTitle">대금결제</p>
+                                    <p class="processText">
+                                        검수가 완료되면 정해진 기일에 따라 대금이 지급됩니다.
+                                    </p>
+                                </div> 
+                            </div>
+                            <div class="innerHowToBid" id="estimate">
+                                <div class="boxProcess designCard">
+                                    <p class="processTitle">구매공고열람</p>
+                                    <p class="processText">
+                                        진행중인 공개/단가 계약 공고를 확인합니다.
+                                    </p>
+                                </div>
+                                <div class="boxProcess designCard">
+                                    <p class="processTitle">견적작성</p>
+                                    <p class="processText">
+                                        해당 공고의 희망 견적 금액을 입력해 주세요.
+                                    </p>
+                                </div>
+                                <div class="boxProcess designCard">
+                                    <p class="processTitle">견적서제출</p>
+                                    <p class="processText">
+                                        견적 입력 후 견적서 제출 버튼을 클릭하세요.
+                                    </p>
+                                </div>
+                                <div class="boxProcess designCard">
+                                    <p class="processTitle">견적심사</p>
+                                    <p class="processText">
+                                        제출된 견적서를 바탕으로 낙찰 기업을 선정합니다.
+                                    </p>
+                                </div>
+                                <div class="boxProcess designCard">
+                                    <p class="processTitle">결과발표</p>
+                                    <p class="processText">
+                                        구매 결과는 E-mail 안내 및 나의 구매정보에서 확인할 수 있습니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                      </div>
+                </div>
+            </div>
+            <div class="managerContact">
+                <div class="containerInner">
+                    <div class="titleArea">
+                        <h3 class="sectionTitle">CONTACT</h3>
+                        <p class="sectionDescription">관련 업무 담당자들의 연락처입니다.</p>
+                    </div>
+                    <div class="containerContact">
+                        <div class="cardInformation">
+                            <div class="boxContact">
+                                <span class="contactTeam">자재1팀</span>
+                                <p class="contactRank">이환희 대리</p>
+                                <span class="contactTel">02-519-3469</span>
+                                <span class="contactEmail">leehh@koreazinc.co.kr</span>
+                            </div>
+                        </div>
+                        <div class="cardInformation center">
+                            <div class="boxContact">
+                                <span class="contactTeam">기술지원</span>
+                                <p class="contactRank">이금락 선임</p>
+                                <span class="contactTel">02-519-3469</span>
+                                <span class="contactEmail">leegeumlak@koreazinc.co.kr</span>
+                            </div>
+                        </div>
+                        <div class="cardInformation">
+                            <div class="boxContact">
+                                <span class="contactTeam">자재1팀</span>
+                                <p class="contactRank">김찬율 주임</p>
+                                <span class="contactTel">02-519-3489</span>
+                                <span class="contactEmail">cwkim@koreazinc.co.kr</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="mainFooter">
+            <div class="containerInner">
+                <div class="containerBranch">
+                    <div class="boxBranch">
+                        <p class="branchTitle">본사</p>
+                        <p class="branchAddress">
+                            주소 : 서울특별시 강남구 강남대로 542 영풍빌딩
+                        </p>
+                        <p class="branchTel">연락처 : 02-519-3416</p>
+                        <p class="branchFax">팩스 : 02-519-9987</p>
+                    </div>
+                    <div class="boxBranch">
+                        <p class="branchTitle">온산</p>
+                        <p class="branchAddress">
+                            주소 : 서울특별시 강남구 강남대로 542 영풍빌딩
+                        </p>
+                        <p class="branchTel">연락처 : 02-519-3416</p>
+                        <p class="branchFax">팩스 : 02-519-9987</p>
+                    </div>
+                </div>
+                <p class="branchCopyright">
+                    COPYRIGHT 2022 KOREAZINC. ALL RIGHTS RESERVED.
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
+<script>
+    $(document).ready(function () {
+
+        $(window).on("scroll", function() {
+            if($(window).scrollTop() > 100) {
+                $(".mainHeader").addClass("active");
+            } else {
+                //remove the background property so it comes transparent again (defined in your css)
+                $(".mainHeader").removeClass("active");
+            }
+        });
+
+
+
+        $('.howtoTab a').click(function() {
+      
+        // Check for active
+        $('.howtoTab li').removeClass('active');
+        $(this).parent().addClass('active');
+    
+        // Display active tab
+        let currentTab = $(this).attr('href');
+        $('.tabsContent>div').hide();
+        $(currentTab).show();
+    
+        if ($('#estimate').css('display') == 'block') {
+            openTabGrid();
+        } else if ($('#bid').css('display') == 'block'){
+            openTabGrid();
+        }
+  
+      return false;
+      
+    });
+
+        const Grid = tui.Grid;
+        const instance = new Grid({
+            el: document.getElementById('grid'), // Container element
+            columns: [
+                { header: '공고번호', name: 'number' },
+                { header: '공고명', name: 'name' },
+                { header: '대분류', name: 'category' },
+                { header: '공고시작일', name: 'startdate' },
+                { header: '공고마감일', name: 'enddate' },
+                { header: '담당자', name: 'manager' },
+                { header: '공고구분', name: 'division' },
+                { header: '공고상태', name: 'status' },
+            ],
+            data: [],
+        });
+        const data = [
+            {
+                number: '10012',
+                name: '고려아연 온산 전기운영업체 입찰',
+                category: '대분류값',
+                startdate: '2022.04.12',
+                enddate: '2022.04.30',
+                manager: '이정규',
+                division: '구분값',
+                status: '공고상태',
+            },
+            {
+                number: '10013',
+                name: '고려아연 온산 전기운영업체 입찰',
+                category: '대분류값',
+                startdate: '2022.04.12',
+                enddate: '2022.04.30',
+                manager: '이정규',
+                division: '구분값',
+                status: '공고상태',
+            },
+            {
+                number: '10014',
+                name: '고려아연 온산 전기운영업체 입찰',
+                category: '대분류값',
+                startdate: '2022.04.12',
+                enddate: '2022.04.30',
+                manager: '이정규',
+                division: '구분값',
+                status: '공고상태',
+            },
+        ];
+        instance.resetData(data); // Call API of instance's public method Grid.applyTheme('striped'); // Call API of
+    });
+</script>
