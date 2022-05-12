@@ -1,5 +1,6 @@
 /* 팝업 */
 .containerPopup {
+    /* display: none; */
     background-color: rgb(0, 0, 0, 0.3);
     width: 100%;
     height: 100%;
@@ -94,7 +95,7 @@
     -webkit-transform: translateZ(0);
     overflow-x: auto;
     -ms-overflow-style: none;
-    z-index: 10;
+    z-index: 30;
 }
 .header::-webkit-scrollbar { 
     display: none;
@@ -180,7 +181,6 @@
 }
 .containerGnbButtons {
     margin-left: 60px;
-    /* font-size: 0; */
 }
 .containerGnbButtons .buttonLogin a, .containerGnbButtons .buttonJoin a {
     display: block;
@@ -226,11 +226,14 @@ body {
     font-family: 'Noto Sans CJK KR';
 }
 .containerContents {
+    padding: 144px 0 100px 0;
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 144px 0 64px 0;
+}
+.containerInner {
+    margin: 0 auto;
     min-width: 1280px;
     width: 1280px;
-    margin: 0 auto;
 }
 
 .pageTitle {
@@ -253,7 +256,7 @@ body {
     height: 70px;
     background-color: #595d63;
     opacity: 0.95;
-    z-index: 10;
+    z-index: 100;
     overflow-x: auto;
     -ms-overflow-style: none;
 }
@@ -314,6 +317,7 @@ display: none;
 }
 .floatingButtonLogout:hover, .floatingButtonLogout:active {
     background-color: #f0b114;
+    color: #fff;
 }
 
 /* page Tab */
@@ -350,11 +354,11 @@ display: none;
 
 /* search input area */
 .containerSearchArea {
-    /* font-size: 0; */
     display: flex;
     align-content: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-end;
+    flex-wrap: nowrap;
 }
 .inputDesign {
     width: 100%;
@@ -394,19 +398,6 @@ display: none;
     right: 12px;
     cursor: pointer;
 }
-.inputDateTerm {
-    position: relative;
-}
-.inputDateTerm::before {
-    background-image: url('../img/img_calendar.png');
-    width: 18px;
-    height: 18px;
-    content: '';
-    position: absolute;
-    top: 35px;
-    right: 12px;
-    cursor: pointer;
-}
 .searchAreaButton {
     width: 60px;
     height: 36px;
@@ -425,6 +416,7 @@ display: none;
 .containerTable {
     background-color: #fff;
     margin-top: 60px;
+    padding-top: 52px;
     border-radius: 8px;
     border: 1px solid #eee;
     margin-bottom: 102px;
@@ -660,6 +652,7 @@ tbody tr th {
     padding: 40px 0;
     color: #c1c1c1;
     text-align: center;
+    background-color: #F5F5F5;
 }
 .containerBranch {
     width: 752px;
@@ -695,4 +688,443 @@ tbody tr th {
     font-weight: 500;
     line-height: 18px;
     color: #C0C0C0;
+}
+
+/* toast ui gird */
+.containerTable {
+    position: relative;
+}
+.containerTable .tui-grid-cell {
+    background-color: #fff;
+    border: solid 1px #eee;
+}
+.containerTable .tui-grid-cell-content {
+    text-align: center;
+}
+.containerTable .tui-grid-cell-header {
+    background-color: #f8f8f8;
+    font-size: 13px;
+    color: #909090;
+    font-weight: 700;
+    line-height: 19px;
+}
+.containerTable .tui-grid-border-line-top {
+    border-top: 1px solid #eee;
+}
+.containerTable .tui-grid-cell-has-input .tui-grid-cell-content {
+    border-radius: 4px;
+    height: 40px;
+    line-height: 30px;
+}
+.containerTable  .tui-grid-cell-content {
+    font-size: 14px;
+    color: #333;
+    font-weight: 400;
+}
+.containerTable  .tui-grid-layer-selection {
+    border: none;
+}
+.containerTable .tui-grid-cell {
+    line-height: 24px;
+}
+#container_tab .containerTable .tui-grid-container .tui-grid-layer-state {
+    top: 70px;
+}
+.containerTable .tui-grid-header-area {
+    border-color: #eee;
+}
+
+.containerTable .tui-grid-cell-header {
+    position: relative;
+}
+.containerTable .tui-grid-btn-sorting {
+    position: absolute;
+    background-image: url(../img/arrow_tablehead_filter.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    width: 9px;
+    height: 8px;
+    top: 18px;
+    right: 16px;
+}
+.containerTable .tui-pagination {
+    margin: 24px 0;
+}
+#pagination1 .tui-first, #pagination1 .tui-prev, 
+#pagination1 .tui-next, #pagination1 .tui-last {
+    line-height: 24px;
+}
+.containerTable .tui-pagination .tui-ico-ellip {
+    margin-top: 12px;
+    opacity: 0.7;
+}
+#pagination1 .tui-ico-first, #pagination1 .tui-ico-prev, 
+#pagination1 .tui-ico-next, #pagination1 .tui-ico-last {
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    background-position: 0;
+    padding: 0;
+}
+#pagination1 .tui-ico-first {
+    background-image: url(../img/pagination_start.png);
+}
+#pagination1 .tui-ico-prev {
+    background-image: url(../img/pagination_previous.png);
+}
+#pagination1 .tui-ico-next {
+    background-image: url(../img/pagination_next.png);
+}
+#pagination1 .tui-ico-last {
+    background-image: url(../img/pagination_end.png);
+}
+#pagination1 .tui-page-btn {
+    border: 0;
+}
+#pagination1 .tui-page-btn {
+    font-size: 14px;
+    font-weight: 500;
+    color: #888;
+}
+/* 선택된 pagination */
+#pagination1 .tui-is-selected, #pagination1 strong {
+    border-radius: 6px;
+    color: #fff;
+    width: 22px;
+    height: 22px;
+    padding: 4px;
+}
+
+/* datepicker */
+.containerSearchArea .tui-datetime-input  {
+    margin-right: 8px;
+    width: 120px;
+    height: 36px;
+    border: 1px solid #EDEDED;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.tui-datetime-input .tui-ico-date {
+    background-image: url(../img/img_calendar.png);
+    background-repeat: no-repeat;
+    width: 18px;
+    height: 18px;
+}
+.containerSearchArea .tui-datepicker-input.tui-has-focus .tui-ico-date {
+    background-position: 0 0;
+}
+.containerSearchArea .tui-datepicker-input>.tui-ico-date {
+    top: 41%;
+}
+.containerSearchArea .tui-datepicker-input.tui-has-focus {
+    border: 1px solid #EDEDED;
+}
+
+/* selectbox */
+.tui_selectbox {
+    margin-right: 20px;
+    position: relative;
+}
+.tui_selectbox::after {
+    position: absolute;
+    content: '';
+    background-image: url(../img/arrow_line_down.png);
+    background-repeat: no-repeat;
+    top: 34px;
+    right: 12px;
+    width: 18px;
+    height: 18px;
+}
+.tui-select-box-placeholder {
+    line-height: 36px;
+}
+.tui_selectbox span {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 17px;
+    display: inline-block;
+    color: #909090;
+    padding-bottom: 8px;
+}
+.tui_selectbox .tui-select-box-dropdown {
+    z-index: 30;
+    border-radius: 4px;
+}
+.tui_selectbox .tui-select-box-input:focus {
+    outline: 0;
+    outline: 0 auto -webkit-focus-ring-color;
+    border-radius: 4px;
+}
+#select-box1 .tui-select-box-input, #select-box2 .tui-select-box-input, 
+#select-box3 .tui-select-box-input, #select-box4 .tui-select-box-input {
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 14px;
+    color: #333;
+}
+#select-box1 .tui-select-box-item, #select-box2 .tui-select-box-item, #select-box3 .tui-select-box-item, #select-box4 .tui-select-box-item {
+    font-size: 12px;
+}
+#select-box {
+    position: absolute;
+    right: 12px;
+    top: 14px;
+}
+#select-box .tui-select-box {
+    position: relative;
+}
+#select-box .tui-select-box::after {
+    position: absolute;
+    content: '';
+    background-image: url(../img/arrow_table_select.png);
+    background-repeat: no-repeat;
+    top: 11px;
+    right: 10px;
+    width: 8px;
+    height: 6px;
+}
+#select-box .tui-select-box-input {
+    border-radius: 4px;
+}
+#select-box .tui-select-box-input p {
+    font-size: 11px;
+    color: #909090;
+}
+#select-box .tui-select-box-input:focus {
+    outline: 0;
+    outline: 0 auto -webkit-focus-ring-color;
+    border-radius: 4px;
+}
+#select-box .tui-select-box-dropdown {
+    z-index: 30;
+}
+#select-box .tui-select-box-dropdown {
+    border-radius: 4px;
+}
+#select-box .tui-select-box-item {
+    font-size: 11px;
+}
+
+/* datePicker */
+.tui-datepicker {
+    z-index: 20;
+}
+.tui_datepicker {
+    position: relative;
+}
+#date-picker-wrapper1, #date-picker-wrapper2 {
+    position: absolute;
+    top: 36px;
+    left: 0;
+}
+
+/* renderer */
+.correctionNotice {
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid #9BBCEE;
+    background-color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    color: #3668B2;
+    line-height: 18px;
+    margin-left: 19px;
+    border-radius: 4px;
+    padding: 4px 10px;
+}
+
+.delete_row:hover, .delete_row:active {
+    opacity: 0.8;
+    cursor: pointer;
+}
+.statusPosting {
+    color: #5c8bd2;
+}
+.statusComplete {
+    color: #a5a5a5;
+}
+
+/* 발주서 print */
+.containerPopup .tableFirst {
+    margin-bottom: 0;
+}
+.containerPopup .tableSecond {
+    margin: 20px 0;
+}
+.containerPopup .tableSecond dd:nth-child(5n) {
+    text-align: right;
+    padding-right: 16px;
+}
+.borderbottom::after {
+    content: '';
+    width: 1000px;
+    height: 1px;
+    background-color: #E0E0E0;
+    top: 241px;
+    left: -40px;
+    position: absolute;
+}
+.titlePrint {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000;
+    text-align: left;
+    margin-top: 138px;
+}
+.informationCompany {
+    position: relative;
+    margin-top: 27px;
+    padding-left: 55px;
+}
+.informationCompany::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 34.5px;
+    background-image: url(../img/logo_kz_black.png);
+}
+.nameCompany, .addressCompany, .faxCompany {
+    font-weight: 400;
+    color: #444;
+    line-height: 18px;
+}
+.nameCompany, .addressCompany {
+    font-size: 13px;
+    text-align: left;
+}
+.nameCompany {
+    display: block;
+}
+.addressCompany {
+    float: left;
+}
+.faxCompany {
+    font-size: 14px;
+    text-align: right;
+    float: right;
+}
+.containerPrint .containerViewTable {
+    margin-top: 40px;
+}
+.containerPrint .containerViewTable dt, .containerPrint .containerViewTable dd {
+    flex: 1 1 16%;
+}
+.containerPrint .containerViewTable dd:nth-child(6n) {
+    text-align: right;
+    padding-right: 16px;
+}
+.containerPrint .containerViewTable dd:last-child {
+    flex: 72 1 0;
+}
+.compliance {
+    background-color: #F2F9FF;
+    width: 100%;
+    height: 83px;
+    padding: 16px;
+}
+.compliance .title, .compliance .description {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1d3aa4;
+    line-height: 21px;
+    text-align: left;
+}
+.compliance .title {
+    font-weight: 500; 
+    position: relative;
+    padding-left: 28px;
+}
+.compliance .title::before {
+    background-image: url(../img/img_notice_blue.png);
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: 0;
+}
+.compliance .description {
+    font-weight: 400;
+    margin-top: 8px;
+}
+.containerPrint .containerButtons {
+    margin-top: 31px;
+}
+
+.gridView .tui-grid-body-area {
+    overflow: visible;
+}
+.gridView .tui-grid-scrollbar-right-top,
+.gridView .tui-grid-scrollbar-y-inner-border {
+    display: none;
+}
+.gridView .tui-grid-rside-area .tui-grid-header-area, 
+.gridView .tui-grid-rside-area .tui-grid-summary-area {
+    margin-right: 0;
+}
+.gridView .tui-grid-table,
+.gridView .tui-grid-body-container,
+.gridView .tui-grid-table-container {
+    width: 100%!important;
+}
+.gridView .tui-grid-scrollbar-frozen-border,
+.gridView .tui-grid-scrollbar-right-bottom {
+    display: none;
+}
+.gridView .tui-grid-lside-area .tui-grid-body-area {
+    height: fit-content;
+}
+.popupHeader h1, .popupHeader p {
+    width: 50%;
+    display: inline-block;
+}
+.popupHeader button {
+    height: 36px;
+    padding: 9px 16px 9px 36px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.popupHeader .confirm {
+    background-color: #5DA5FE;
+    position: relative;
+}
+.popupHeader .confirm:hover, .popupHeader .confirm:active {
+    background-color: #4285d8;
+}
+.popupHeader .confirm::before {
+    background-image: url(../img/icon_confirm_white.png);
+}
+.popupHeader .confirm::before, .popupHeader .print::before {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 8px;
+    left: 8px;
+    content: '';
+}
+.popupHeader .print {
+    background-color: #595D63;
+    margin-left: 12px;
+    position: relative;
+}
+.popupHeader .print::before {
+    background-image: url(../img/icon_print_white.png);
+}
+.popupHeader .print:hover, .popupHeader .print:active {
+    background-color: #3a3d42;
+}
+.popupHeader .Buttons {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.tui-grid-layer-state {
+    border-left: 1px solid #eee;
 }
