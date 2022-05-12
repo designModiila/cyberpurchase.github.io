@@ -256,7 +256,7 @@ body {
     height: 70px;
     background-color: #595d63;
     opacity: 0.95;
-    z-index: 100;
+    z-index: 50;
     overflow-x: auto;
     -ms-overflow-style: none;
 }
