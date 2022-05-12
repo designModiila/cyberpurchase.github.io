@@ -241,6 +241,7 @@
     border: 1px solid #EEEEEE;
     border-radius: 8px;
     overflow: hidden;
+    text-align: left;
 }
 .containerTitle {
     font-size: 18px;
@@ -252,6 +253,7 @@
 }
 .containerNotice {
     margin-top: 29px;
+    text-align: left;
 }
 .containerNotice .containerTitle {
     margin-bottom: 22px;
@@ -540,37 +542,37 @@
 
 
 /* toast ui */
-#grid .tui-grid-rside-area .tui-grid-header-area {
+#purchase .tui-grid-rside-area .tui-grid-header-area {
     background-color: #F8F8F8;
 }
-#grid .tui-grid-cell-header {
+#purchase .tui-grid-cell-header {
     background-color: #F8F8F8;
 }
-#grid .tui-grid-container * {
+#purchase .tui-grid-container * {
     text-align: center;
     border: 0;
 }
-#grid .tui-grid-body-area .tui-grid-cell {
+#purchase .tui-grid-body-area .tui-grid-cell {
     background-color: #fff;
 }
-#grid .tui-grid-border-line-top {
+#purchase .tui-grid-border-line-top {
     border-top: 1px solid #eee;
 }
-#grid .tui-grid-header-area {
+#purchase .tui-grid-header-area {
     border-color: #eee;
 }
-#grid tbody tr th {
+#purchase tbody tr th {
     font-size: 13px;
     font-weight: 700;
     color: #909090;
 }
-#grid .tui-grid-container {
+#purchase .tui-grid-container {
     font-size: 14px;
     font-weight: 500;
     color: #595967;
 }
-#grid .tui-grid-scrollbar-y-inner-border,
-#grid .tui-grid-scrollbar-right-bottom {
+#purchase .tui-grid-scrollbar-y-inner-border,
+#purchase .tui-grid-scrollbar-right-bottom {
     border: none;
     background-color: #fff;
 }
