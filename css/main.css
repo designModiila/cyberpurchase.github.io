@@ -1,0 +1,546 @@
+/* main */
+.mainHeader {
+    background-color: transparent;
+    border-bottom: 1px solid rgba(239, 239, 239, 0.2);
+    height: 80px;
+    display: block;
+    width: 100%;
+    position: fixed;
+    -webkit-transform: translateZ(0);
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    z-index: 30;
+}
+.mainHeader::-webkit-scrollbar { 
+    display: none;
+}
+.mainHeader .logo a {
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 900;
+    color: #fff;
+    vertical-align: middle;
+}
+.mainHeader .gnbHeader .gnb li a {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+}
+.mainHeader .gnbHeader .gnb li a:hover, .mainHeader .gnbHeader .gnb li a:active {
+    background-color: rgb(163, 166, 170);
+}
+
+.mainHeader.active {
+    border-bottom: 1px solid #EFEFEF;
+    background-color: #fff;
+    border-bottom: 1px solid #EFEFEF;
+    height: 80px;
+    display: block;
+    width: 100%;
+    position: fixed;
+    -webkit-transform: translateZ(0);
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    z-index: 30;
+} 
+.mainHeader.active .logo a {
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 900;
+    color: #222;
+    vertical-align: middle;
+} 
+.mainHeader.active .gnbHeader .gnb li a {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+}
+.mainFooter {
+    border-top: 1px solid #333337; 
+    background-color: #3C3D43;
+    padding: 40px 0;
+    color: #c1c1c1;
+    text-align: center;
+}
+.mainFooter .boxBranch {
+    display: inline-block;
+    text-align: left;
+    margin-bottom: 34px;
+}
+.mainFooter .boxBranch:first-child {
+    margin-right: 174px;
+}
+.mainFooter .branchTitle {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+}
+.mainFooter .branchAddress, .mainFooter .branchTel, .mainFooter .branchFax {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19px;
+}
+.mainFooter .branchTel, .mainFooter .branchFax {
+    display: inline-block;
+}
+.mainFooter .branchFax {
+    margin-left: 34px;
+}
+.mainFooter .branchCopyright {
+    margin-bottom: 102px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    color: #C0C0C0;
+}
+
+/* carousel */
+.carousel-item {
+    position: relative;
+}
+.carousel-caption {
+    text-align: left;
+    position: absolute;
+    top: 210px;
+    left: 352px;
+}
+.carousel-caption h3 {
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 107%;
+    color: #fff;
+}
+.carousel-caption p {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    color: #fff;
+    margin-top: 12px;
+}
+.carousel-control-prev-icon {
+    background-image: url(../img/icon_carousel_prev.png);
+    width: 77px;
+    height: 77px;
+}
+.carousel-control-next-icon {
+    background-image: url(../img/icon_carousel_next.png);
+    width: 77px;
+    height: 77px;
+}
+.carousel-control-next-icon:hover, .carousel-control-next-icon:active {
+    opacity: 0.5;
+}
+
+/* grid & login */
+.containerLogout {
+    display: none;
+}
+.containerLogin {
+    /* display: none; */
+}
+.boxLogin .loginInput {
+    width: 304px;
+    height: 40px;
+    border: 1px solid #EDEDED;
+    border-radius: 4px;
+    padding-left: 13px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    line-height: 21px;
+}
+.boxLogin .loginInput::placeholder {
+    color: #999;
+}
+.boxLogin .loginInput:nth-child(2) {
+    margin-left: 13px;
+}
+.boxLogin .buttonLogin {
+    background-color: #FFC327;
+    border-radius: 30px;
+    padding: 10px 13px;
+    width: 104px;
+    height: 40px;
+    margin-left: 24px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+}
+.boxLogin .buttonLogin:hover, .buttonLogin:active {
+    background-color: #ecb019;
+}
+.boxLogin .textLink {
+    font-size: 14px;
+    color: #999;
+    font-weight: 500;
+    line-height: 21px;
+    text-decoration: underline;
+    text-align: right;
+}
+.boxLogin .textLink:last-child {
+    margin-left: 30px;
+}
+.boxTextLink {
+    float: right;
+    margin-top: 12px;
+}
+.containerLogin, .containerLogout {
+    width: 1280px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    position: absolute;
+    top: 464px;
+    left: 50%; 
+    transform: translateX(-50%);
+    z-index: 10;
+}
+.containerLogin .loginInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.containerLogin .loginInformation {
+    flex: 1;
+}
+.containerLogin .dataLabel {
+    margin-right: 46px;
+}
+.containerLogin .floatingButtonLogout {
+    margin-left: 0;
+}
+.containerLogin .loginInfo .loginUser, .containerLogin .loginInfo .dataCount {
+    color: #000;
+    font-weight: 700;
+}
+.containerGrid {
+    border: 1px solid #EEEEEE;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.containerTitle {
+    font-size: 18px;
+    color: #000;
+    font-weight: 500;
+    line-height: 27px;
+    margin: 12px 20px;
+    display: inline-block;
+}
+.containerNotice {
+    margin-top: 29px;
+}
+.containerNotice .containerTitle {
+    margin-bottom: 22px;
+}
+.containerNotice .more , .containerGrid .more {
+    float: right;
+    font-size: 11px;
+    margin: 12px 12px 0 0;
+    color: #909090;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 6px 8px 5px 8px;
+    min-width: 69px;
+    border: 1px solid #ededed;
+    border-radius: 4px;
+    text-align: left;
+    position: relative;
+}
+.containerGrid .more:hover, .containerGrid .more:active,
+.containerNotice .more:hover, .containerNotice .more:active {
+    background-color: #eee;
+}
+.containerGrid .more::after, .containerNotice .more::after {
+    position: absolute;
+    content: '';
+    right: 10px;
+    top: 7px;
+    width: 12px;
+    height: 11px;
+    background-image: url(../img/icon_more.png);
+}
+.tableNotice {
+    border-top: 2px solid #666;
+}
+.tableNotice table {
+    margin: 14px 14px 0 14px;
+    width: 97%;
+}
+.tableNotice tr td {
+    padding: 8px 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    color: #595967;
+}
+.tableNotice tr td:first-child {
+    width: 40px;
+    text-align: center;
+}
+.tableNotice tr td:nth-child(2) {
+    width: 860px;
+    padding-left: 48px;
+}
+.tableNotice tr td:nth-child(3) {
+    width: 160px;
+}
+.tableNotice tr td:nth-child(3), .tableNotice tr td:nth-child(4) {
+    text-align: center;
+}
+.tableNotice tr:last-child td {
+    padding: 8px 0 0 0;
+}
+.tableNotice tr:last-child td:nth-child(2) {
+    padding: 8px 0 0 48px;
+}
+
+/* How To Bid */
+.containerHowToBid {
+    padding: 300px 0 187px 0;
+    text-align: center; 
+}
+.titleArea {
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
+}
+.containerHowToBid .sectionTitle {
+    color: #222;
+    margin-bottom: 8px;
+}
+.sectionTitle {
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 78px;
+}
+.sectionDescription {
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+    line-height: 19px;
+    margin-bottom: 44px;
+}
+.howtoTab {
+    display: inline-block;
+    margin-bottom: 113px;
+    padding: 4px;
+    background-color: #E6E6E6;
+    border-radius: 4px;
+}
+.howtoTab ul li {
+    display: inline-block;
+}
+.howtoTab ul li.active a {
+    height: 32px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #444;
+    line-height: 17px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+.howtoTab a {
+    display: inline-block;
+    height: 32px;
+    padding: 8px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #bcbcbc;
+    line-height: 17px;
+    border-radius: 4px;
+}
+
+.designCard {
+    display: inline-block;
+    padding: 24px 28px;
+    width: 195px;
+    height: 186px;
+    background-color: #fff;
+    border-radius: 12px;
+    margin-right: 1.4%;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.04);
+    text-align: left;
+    position: relative;
+    vertical-align: top;
+}
+.designCard::after {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: 32px;
+    width: 40px;
+    height: 40px;
+}
+
+#bid .designCard:first-child::after {
+    background-image: url(../img/icon_register_company.png);
+}
+#bid .designCard:nth-child(2)::after {
+    background-image: url(../img/icon_view_buying.png);
+}
+#bid .designCard:nth-child(3)::after {
+    background-image: url(../img/icon_write_estimate.png);
+}
+#bid .designCard:nth-child(4)::after {
+    background-image: url(../img/icon_wirte_plan.png);
+}
+#bid .designCard:nth-child(5)::after {
+    background-image: url(../img/icon_provide_product.png);
+}
+#bid .designCard:last-child::after {
+    background-image: url(../img/icon_pay_charge.png);
+}
+
+#estimate {
+    display: none;
+}
+#estimate .designCard:first-child::after {
+    background-image: url(../img/icon_view_buying.png);
+}
+#estimate .designCard:nth-child(2)::after {
+    background-image: url(../img/icon_write_estimate.png);
+}
+#estimate .designCard:nth-child(3)::after {
+    background-image: url(../img/img_submit.png);
+}
+#estimate .designCard:nth-child(4)::after {
+    background-image: url(../img/img_test.png);
+}
+#estimate .designCard:nth-child(5)::after {
+    background-image: url(../img/img_result.png);
+}
+.designCard:last-child {
+    margin: 0;
+}
+.processTitle {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    line-height: 19px;
+    margin-top: 56px;
+}
+.processText {
+    font-size: 13px;
+    font-weight: 500;
+    color: #999;
+    line-height: 16px;
+    margin-top: 15px;
+    letter-spacing: -0.1px;
+}
+
+/* contact */
+.managerContact {
+    background-color: #3C3D43;
+    height: 680px;
+    text-align: left;
+    margin: 0;
+    padding: 151px 0 114px 0;
+    position: relative;
+}
+.managerContact::before {
+    background-image: url(../img/img_background_logo.png);
+    background-size: cover;
+    width: 683px;
+    height: 585px;
+    position: absolute;
+    content: '';
+    top: 61px;
+    left: 413px;
+}
+.managerContact .sectionTitle {
+    color: #fff;
+    margin-bottom: 11px;
+}
+.containerContact {
+    display: inline-flex;
+    max-width: 680px;
+    margin-left: 150px;
+    flex-wrap: wrap;
+}
+.cardInformation {
+    background-color: #2E2F35;
+    border-radius: 12px;
+    width: 323px;
+    height: 186px;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: flex-start;
+}
+.center {
+    margin-left: 24px;
+    align-self: center;
+}
+.boxContact {
+    padding: 39px 0 0 102px;
+}
+.cardInformation::after {
+    background-image: url(../img/img_symbol_kz.png);
+    content: '';
+    position: absolute;
+    width: 49px;
+    height: 42px;
+    top: 36px;
+    left: 32px;
+}
+.contactTeam, .contactTel, .contactEmail {
+    font-size: 14px;
+    color: #666;
+    line-height: 17px;
+}
+.contactTeam {
+    font-weight: 700;
+}
+.contactRank {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    color: #fff;
+    margin: 13px 0 17px 0;
+}
+.contactTel, .contactEmail {
+    font-weight: 500;
+}
+.contactTel {
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+
+
+/* toast ui */
+#grid .tui-grid-rside-area .tui-grid-header-area {
+    background-color: #F8F8F8;
+}
+#grid .tui-grid-cell-header {
+    background-color: #F8F8F8;
+}
+#grid .tui-grid-container * {
+    text-align: center;
+}
+#grid .tui-grid-body-area .tui-grid-cell {
+    background-color: #fff;
+}
+#grid .tui-grid-border-line-top {
+    border-top: 1px solid #eee;
+}
+#grid .tui-grid-header-area {
+    border-color: #eee;
+}
+#grid tbody tr th {
+    font-size: 13px;
+    font-weight: 700;
+    color: #909090;
+}
+#grid .tui-grid-container {
+    font-size: 14px;
+    font-weight: 500;
+    color: #595967;
+}
