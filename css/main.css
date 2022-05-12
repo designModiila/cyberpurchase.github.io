@@ -542,37 +542,37 @@
 
 
 /* toast ui */
-#purchase .tui-grid-rside-area .tui-grid-header-area {
+#grid .tui-grid-rside-area .tui-grid-header-area {
     background-color: #F8F8F8;
 }
-#purchase .tui-grid-cell-header {
+#grid .tui-grid-cell-header {
     background-color: #F8F8F8;
 }
-#purchase .tui-grid-container * {
+#grid .tui-grid-container * {
     text-align: center;
     border: 0;
 }
-#purchase .tui-grid-body-area .tui-grid-cell {
+#grid .tui-grid-body-area .tui-grid-cell {
     background-color: #fff;
 }
-#purchase .tui-grid-border-line-top {
+#grid .tui-grid-border-line-top {
     border-top: 1px solid #eee;
 }
-#purchase .tui-grid-header-area {
+#grid .tui-grid-header-area {
     border-color: #eee;
 }
-#purchase tbody tr th {
+#grid tbody tr th {
     font-size: 13px;
     font-weight: 700;
     color: #909090;
 }
-#purchase .tui-grid-container {
+#grid .tui-grid-container {
     font-size: 14px;
     font-weight: 500;
     color: #595967;
 }
-#purchase .tui-grid-scrollbar-y-inner-border,
-#purchase .tui-grid-scrollbar-right-bottom {
+#grid .tui-grid-scrollbar-y-inner-border,
+#grid .tui-grid-scrollbar-right-bottom {
     border: none;
     background-color: #fff;
 }
