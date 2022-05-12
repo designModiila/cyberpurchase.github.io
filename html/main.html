@@ -347,7 +347,6 @@
         });
 
 
-
         $('.howtoTab a').click(function() {
       
         // Check for active
@@ -360,14 +359,13 @@
         $(currentTab).show();
     
         if ($('#estimate').css('display') == 'block') {
-            openTabGrid();
         } else if ($('#bid').css('display') == 'block'){
-            openTabGrid();
         }
-  
-      return false;
-      
-    });
+        return false;
+        
+        });
+
+        
 
         const Grid = tui.Grid;
         const instance = new Grid({
