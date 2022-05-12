@@ -60,6 +60,7 @@
     cursor: pointer;
 }
 .mainFooter {
+    min-width: 1280px;
     border-top: 1px solid #333337; 
     background-color: #3C3D43;
     padding: 40px 0;
@@ -98,7 +99,14 @@
     color: #C0C0C0;
 }
 
+.containerContentsMain {
+    min-width: 1280px
+}
+
 /* carousel */
+.carousel {
+    min-height: 720px;
+}
 .carousel-item {
     position: relative;
 }
@@ -134,13 +142,26 @@
 .carousel-control-next-icon:hover, .carousel-control-next-icon:active {
     opacity: 0.5;
 }
+.carousel-indicators {
+    display: none;
+}
 
 /* grid & login */
+.wrapperBox {
+    margin: 0 auto;
+    min-height: 364px;
+    width: 1280px;
+    margin-top: -260px;
+    text-align: center;
+}
 .containerLogout {
     display: none;
 }
 .containerLogin {
     /* display: none; */
+}
+.boxLogin {
+    text-align: left;
 }
 .boxLogin .loginInput {
     width: 304px;
@@ -195,10 +216,6 @@
     border-radius: 12px;
     padding: 30px;
     position: absolute;
-    top: 464px;
-    left: 50%; 
-    transform: translateX(-50%);
-    z-index: 10;
 }
 .containerLogin .loginInfo {
     display: flex;
@@ -208,6 +225,7 @@
 }
 .containerLogin .loginInformation {
     flex: 1;
+    text-align: left;
 }
 .containerLogin .dataLabel {
     margin-right: 46px;
@@ -302,7 +320,7 @@
 
 /* How To Bid */
 .containerHowToBid {
-    padding: 300px 0 187px 0;
+    padding: 140px 0 187px 0;
     text-align: center; 
 }
 .titleArea {
